@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, View, useWindowDimensions } from "react-native";
+import { contents } from "./contents";
 
 export default function App() {
+  const { width, height } = useWindowDimensions();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <FlatList
+      data={contents}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+        <View style={{ width: width, height: height }}>{item.component}</View>
+      )}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
