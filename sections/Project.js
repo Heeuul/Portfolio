@@ -1,10 +1,27 @@
-import { View, Text, FlatList, useWindowDimensions } from "react-native";
-import React from "react";
+import {
+  FlatList,
+  View,
+  Text,
+  useWindowDimensions,
+  TouchableOpacity,
+  Platform,
+} from "react-native";
+import React, { useEffect, useRef, useState } from "react";
+import { SimpleLineIcons } from "@expo/vector-icons";
 
 import { projects } from "../projectContents";
 
 export default function Project() {
   const { width, height } = useWindowDimensions();
+  const listRef = useRef(null);
+  const [viewProjectIndex, SetViewProjectIndex] = useState(0);
+
+  // useEffect(() => {
+  //   listRef.current.scrollToIndex({
+  //     animated: true,
+  //     index: viewProjectIndex,
+  //   });
+  // }, [viewProjectIndex]);
 
   function RenderProjectCard(item) {
     return (
@@ -15,7 +32,6 @@ export default function Project() {
           borderColor: "grey",
           borderWidth: 1,
           padding: 15,
-          marginRight: 25,
         }}
       >
         <Text style={{ fontWeight: "bold", fontSize: 50 }}>
@@ -44,11 +60,54 @@ export default function Project() {
         }}
       >
         <FlatList
+          ref={listRef}
           data={projects}
           keyExtractor={(item) => item.id}
           horizontal
           renderItem={(item) => RenderProjectCard(item)}
+          style={{ overflow: "visible", width: "100%", height: "100%" }}
+          pagingEnabled
+          disableIntervalMomentum
+          showsHorizontalScrollIndicator={true}
+          // onLayout={() => {
+          //   listRef.current.scrollToIndex({
+          //     animated: true,
+          //     index: viewProjectIndex,
+          //   });
+          // }}
         />
+      </View>
+
+      <View
+        style={{
+          width: "90%",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          position: "absolute",
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => SetViewProjectIndex(viewProjectIndex - 1)}
+          disabled={viewProjectIndex === 0}
+        >
+          <SimpleLineIcons
+            name="arrow-left"
+            size={35}
+            color={viewProjectIndex === 0 ? "#99999988" : "black"}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => SetViewProjectIndex(viewProjectIndex + 1)}
+          disabled={viewProjectIndex + 1 === projects.length}
+        >
+          <SimpleLineIcons
+            name="arrow-right"
+            size={35}
+            color={
+              viewProjectIndex + 1 === projects.length ? "#99999988" : "black"
+            }
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

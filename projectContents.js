@@ -77,28 +77,102 @@ export const projects = [
   {
     id: 2,
     name: "Online Dating Match",
-    description:
-      "Mimic of the Tinder app. Features include profile creation & authentication, profile card swipings, matching algorithm, and private messaging.",
+    description: "Mimic of the Tinder app.",
+    features: [
+      "Profile creation & authentication",
+      "Profile card swipings",
+      "Matching algorithm",
+      "Private messaging",
+    ],
+    technologies: [
+      {
+        name: "Expo Auth Session",
+        uri: "https://www.npmjs.com/package/expo-auth-session",
+      },
+      {
+        name: "Firebase Authentication",
+        uri: "https://firebase.google.com/docs/auth",
+      },
+      {
+        name: "Firebase Firestore",
+        uri: "https://firebase.google.com/docs/firestore",
+      },
+      {
+        name: "React Native Deck Swiper",
+        uri: "https://github.com/webraptor/react-native-deck-swiper",
+      },
+      {
+        name: "Expo Application Services",
+        uri: "https://github.com/expo/eas-cli",
+      },
+    ],
     previewPicURI: "",
   },
   {
     id: 3,
     name: "Instant Messaging",
-    description:
-      "Mimic of the Signal app. Features include profile creation & authenthication, group chats creation & messaging, and web support.",
+    description: "Mimic of the Signal app.",
+    features: [
+      "Profile creation & authenthication",
+      "Group chat creations & messagings",
+      "Web support",
+    ],
+    technologies: [
+      {
+        name: "Firebase Authentication",
+        uri: "https://firebase.google.com/docs/auth",
+      },
+      {
+        name: "Firebase Firestore",
+        uri: "https://firebase.google.com/docs/firestore",
+      },
+      {
+        name: "React Native Elements",
+        uri: "https://reactnativeelements.com/",
+      },
+      {
+        name: "React Native for Web",
+        uri: "https://necolas.github.io/react-native-web/",
+      },
+    ],
     previewPicURI: "",
   },
   {
     id: 4,
     name: "Statistics Tracker",
     description:
-      "Cryptocurrency price tracker interface app for CoinGecko API. Features include onboarding introductions, list view of multiple currency statistics, and graph visualisation of price changes for the past 7 days.",
-    previewPicURI: "",
-  },
-  {
-    id: 5,
-    name: "",
-    description: "",
+      "Cryptocurrency price tracker interface app for CoinGecko API.",
+    features: [
+      "Onboarding introductions",
+      "List view of multiple currency statistics",
+      "Graph visualisation of price changes for the past 7 days",
+    ],
+    technologies: [
+      {
+        name: "CoinGecko API",
+        uri: "https://www.coingecko.com/en/api",
+      },
+      {
+        name: "React Native Onboard",
+        uri: "https://github.com/FrigadeHQ/react-native-onboard",
+      },
+      {
+        name: "React Native Bottom Sheet",
+        uri: "https://github.com/gorhom/react-native-bottom-sheet",
+      },
+      {
+        name: "React Native Animated Charts",
+        uri: "https://github.com/rainbow-me/react-native-animated-charts",
+      },
+      {
+        name: "Axios",
+        uri: "https://github.com/qiangmao/axios",
+      },
+      {
+        name: "Moment",
+        uri: "https://momentjs.com",
+      },
+    ],
     previewPicURI: "",
   },
   {
