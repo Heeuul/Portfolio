@@ -1,48 +1,13 @@
-import {
-  FlatList,
-  View,
-  Text,
-  useWindowDimensions,
-  TouchableOpacity,
-  Platform,
-} from "react-native";
-import React, { useEffect, useRef, useState } from "react";
+import { View, useWindowDimensions, TouchableOpacity } from "react-native";
+import React, { useRef } from "react";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
-import { projects } from "../projectContents";
+import Swiper from "react-native-web-swiper";
+import ProjectCards from "../components/ProjectCards";
 
 export default function Project() {
-  const { width, height } = useWindowDimensions();
-  const listRef = useRef(null);
-  const [viewProjectIndex, SetViewProjectIndex] = useState(0);
-
-  // useEffect(() => {
-  //   listRef.current.scrollToIndex({
-  //     animated: true,
-  //     index: viewProjectIndex,
-  //   });
-  // }, [viewProjectIndex]);
-
-  function RenderProjectCard(item) {
-    return (
-      <View
-        style={{
-          width: width * 0.8,
-          height: height * 0.8,
-          borderColor: "grey",
-          borderWidth: 1,
-          padding: 15,
-        }}
-      >
-        <Text style={{ fontWeight: "bold", fontSize: 50 }}>
-          {item.item.name}
-        </Text>
-        <Text style={{ fontStyle: "italic", fontSize: 25 }}>
-          {item.item.description}
-        </Text>
-      </View>
-    );
-  }
+  const windowSize = useWindowDimensions();
+  const swiperRef = useRef(null);
 
   return (
     <View
@@ -59,55 +24,41 @@ export default function Project() {
           height: "80%",
         }}
       >
-        <FlatList
-          ref={listRef}
-          data={projects}
-          keyExtractor={(item) => item.id}
-          horizontal
-          renderItem={(item) => RenderProjectCard(item)}
-          style={{ overflow: "visible", width: "100%", height: "100%" }}
-          pagingEnabled
-          disableIntervalMomentum
-          showsHorizontalScrollIndicator={true}
-          // onLayout={() => {
-          //   listRef.current.scrollToIndex({
-          //     animated: true,
-          //     index: viewProjectIndex,
-          //   });
-          // }}
-        />
-      </View>
-
-      <View
-        style={{
-          width: "90%",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          position: "absolute",
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => SetViewProjectIndex(viewProjectIndex - 1)}
-          disabled={viewProjectIndex === 0}
+        <Swiper
+          ref={swiperRef}
+          controlsEnabled={false}
+          innerContainerStyle={{ overflow: "visible" }}
         >
-          <SimpleLineIcons
-            name="arrow-left"
-            size={35}
-            color={viewProjectIndex === 0 ? "#99999988" : "black"}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => SetViewProjectIndex(viewProjectIndex + 1)}
-          disabled={viewProjectIndex + 1 === projects.length}
+          <ProjectCards windowSize={windowSize} ID={0} />
+          <ProjectCards windowSize={windowSize} ID={1} />
+          <ProjectCards windowSize={windowSize} ID={2} />
+          <ProjectCards windowSize={windowSize} ID={3} />
+          <ProjectCards windowSize={windowSize} ID={4} />
+          <ProjectCards windowSize={windowSize} ID={5} />
+        </Swiper>
+        <View
+          style={{
+            width: "100%",
+            height: "100%",
+            flexDirection: "row",
+            position: "absolute",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
-          <SimpleLineIcons
-            name="arrow-right"
-            size={35}
-            color={
-              viewProjectIndex + 1 === projects.length ? "#99999988" : "black"
-            }
-          />
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => swiperRef.current.goToPrev()}>
+            <SimpleLineIcons
+              name="arrow-left"
+              size={35}
+              color={
+                swiperRef.current.getActiveIndex() <= 1 ? "#99999988" : "black"
+              }
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => swiperRef.current.goToNext()}>
+            <SimpleLineIcons name="arrow-right" size={35} color="black" />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
