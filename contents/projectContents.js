@@ -175,17 +175,4 @@ export const projects = [
     ],
     previewPicURI: "",
   },
-  {
-    id: 6,
-    name: "",
-    description: "",
-    features: [""],
-    technologies: [
-      {
-        name: "",
-        uri: "",
-      },
-    ],
-    previewPicURI: "",
-  },
 ];

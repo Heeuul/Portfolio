@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Experience() {
   return (
-    <View style={{ flex: 1, backgroundColor: "#FAEDCB" }}>
+    <View style={{ flex: 1 }}>
       <Text>Exp</Text>
     </View>
   );

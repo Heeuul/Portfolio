@@ -14,7 +14,6 @@ export default function Project() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#C9E4DE",
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -31,7 +30,6 @@ export default function Project() {
           <ProjectCards projectData={projects[2]} />
           <ProjectCards projectData={projects[3]} />
           <ProjectCards projectData={projects[4]} />
-          <ProjectCards projectData={projects[5]} />
         </Swiper>
         <View
           style={{

@@ -6,7 +6,6 @@ export default function Skill() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#C6DEF1",
         justifyContent: "center",
         alignItems: "center",
       }}

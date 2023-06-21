@@ -1,16 +1,13 @@
-import { FlatList, View, useWindowDimensions } from "react-native";
-import { sections } from "./contents/sectionContents";
+import { Platform, View } from "react-native";
+
+import MobileBase from "./components/MobileBase";
+import WebBase from "./components/WebBase";
+import { colors } from "./styles";
 
 export default function App() {
-  const { width, height } = useWindowDimensions();
-
   return (
-    <FlatList
-      data={sections}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <View style={{ width: width, height: height }}>{item.component}</View>
-      )}
-    />
+    <View style={{ flex: 1, backgroundColor: colors.light }}>
+      {Platform.OS === "web" ? <WebBase /> : <MobileBase />}
+    </View>
   );
 }

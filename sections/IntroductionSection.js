@@ -6,7 +6,6 @@ export default function Introduction() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#F2C6DE",
         justifyContent: "center",
         alignItems: "center",
       }}

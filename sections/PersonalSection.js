@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Personal() {
   return (
-    <View style={{ flex: 1, backgroundColor: "#DBCDF0" }}>
+    <View style={{ flex: 1 }}>
       <Text>Personal</Text>
     </View>
   );

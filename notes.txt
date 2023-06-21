@@ -48,6 +48,7 @@ Things to do:
    > Light & dark mode 
    > Layout (but horizontal): 
       https://www.awwwards.com/inspiration/digital-design-studio-clean-graphic-design-and-identity-strategy 
+   > Future style: https://p5aholic.me/ 
    > Contents: 
       i. Name, looking for a React Native developer position 
      ii. Projects: 

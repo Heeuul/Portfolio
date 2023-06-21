@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
+import { colors } from "../styles";
 
 export default function ProjectCards({ projectData }) {
   return (
@@ -18,13 +19,24 @@ export default function ProjectCards({ projectData }) {
           height: "95%",
           borderColor: "grey",
           borderWidth: 1,
+          borderRadius: 25,
           padding: 15,
         }}
       >
-        <Text style={{ fontWeight: "bold", fontSize: 35 }}>
+        <Text
+          style={{
+            fontWeight: "bold",
+            fontSize: 35,
+          }}
+        >
           {projectData.name}
         </Text>
-        <Text style={{ fontStyle: "italic", fontSize: 20 }}>
+        <Text
+          style={{
+            fontStyle: "italic",
+            fontSize: 20,
+          }}
+        >
           {projectData.description}
         </Text>
       </View>

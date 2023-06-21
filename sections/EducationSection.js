@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Education() {
   return (
-    <View style={{ flex: 1, backgroundColor: "#F7D9C4" }}>
+    <View style={{ flex: 1 }}>
       <Text>Edu</Text>
     </View>
   );
