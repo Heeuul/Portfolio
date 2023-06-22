@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function SectionButton() {
+export default function SectionButton({ sectionName, OnButtonPress }) {
   return (
-    <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Projects")}>
-      <Text style={styles.sectionButtonText}>Projects</Text>
+    <TouchableOpacity style={styles.sectionButton} onPress={OnButtonPress}>
+      <Text style={styles.sectionButtonText}>{sectionName}</Text>
     </TouchableOpacity>
   );
 }

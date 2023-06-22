@@ -4,7 +4,7 @@ import React from "react";
 export default function Education() {
   return (
     <View style={{ flex: 1 }}>
-      <Text>Edu</Text>
+      <Text>Educations</Text>
     </View>
   );
 }
