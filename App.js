@@ -1,12 +1,26 @@
-import { Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from "react-native";
 
 import MobileBase from "./components/MobileBase";
 import WebBase from "./components/WebBase";
 import { colors } from "./styles";
 import { useState } from "react";
+import { useFonts } from "expo-font";
 
 export default function App() {
   const [section, SetSection] = useState("Introduction");
+  const [darkMode, SetDarkMode] = useState(false);
+  const [fontsLoaded] = useFonts({ HelveticaNeue: require("./fonts/HelveticaNeue-Light.otf") });
+
+  const { width, height } = useWindowDimensions();
+  const isLandscape = width > height;
 
   function GetSection() {
     switch (section) {
@@ -42,40 +56,78 @@ export default function App() {
         style={{
           width: "90%",
           height: "90%",
-          flexDirection: "row",
+          flexDirection: isLandscape ? "row" : "column",
           justifyContent: "space-between",
-          borderWidth: 1,
         }}
       >
         {/* Left Half */}
         <View style={{ justifyContent: "space-between" }}>
           {/* Top Left */}
-          <View style={{ backgroundColor: "pink" }}>
-            <Text style={{ fontSize: 75, includeFontPadding: false }}>Aiman Hans</Text>
-            <Text style={{ fontSize: 30, includeFontPadding: false }}>React Native Developer</Text>
+          <View>
+            <Text
+              style={{
+                fontFamily: "HelveticaNeue",
+                fontSize: 65,
+                borderBottomWidth: 2,
+                lineHeight: 75,
+              }}
+            >
+              Aiman Hans
+            </Text>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image
+                source={{
+                  uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
+                }}
+                style={{
+                  resizeMode: "contain",
+                  width: 55,
+                  height: 55,
+                  marginHorizontal: 5,
+                }}
+              />
+              <View style={{}}>
+                <Text style={{ fontFamily: "HelveticaNeue", fontSize: 30, padding: 0 }}>
+                  React Native
+                </Text>
+                <Text style={{ fontFamily: "HelveticaNeue", fontSize: 15, padding: 1 }}>
+                  Developer/Programmer
+                </Text>
+              </View>
+            </View>
           </View>
           {/* Bot Left */}
           <View>
             <TouchableOpacity
-              style={true ? { ...styles.sectionButton, backgroundColor: "#ababab" } : { ...styles.sectionButton, backgroundColor: "white" }}
+              style={
+                true
+                  ? { ...styles.sectionButton, backgroundColor: "#ababab" }
+                  : { ...styles.sectionButton, backgroundColor: "white" }
+              }
               onPress={() => SetSection("Introduction")}
             >
               <Text style={{ fontSize: 20, color: "#dedede" }}>Introduction</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Projects")}>
-              <Text style={{ fontSize: 20 }}>Projects</Text>
+              <Text style={styles.sectionButtonText}>Projects</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Skills")}>
-              <Text style={{ fontSize: 20 }}>Skills</Text>
+              <Text style={styles.sectionButtonText}>Skills</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Experiences")}>
-              <Text style={{ fontSize: 20 }}>Experiences</Text>
+            <TouchableOpacity
+              style={styles.sectionButton}
+              onPress={() => SetSection("Experiences")}
+            >
+              <Text style={styles.sectionButtonText}>Experiences</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Educations")}>
-              <Text style={{ fontSize: 20 }}>Educations</Text>
+              <Text style={styles.sectionButtonText}>Educations</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sectionButton} onPress={() => SetSection("Additionals")}>
-              <Text style={{ fontSize: 20 }}>Additionals</Text>
+            <TouchableOpacity
+              style={styles.sectionButton}
+              onPress={() => SetSection("Additionals")}
+            >
+              <Text style={styles.sectionButtonText}>Additionals</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -84,6 +136,7 @@ export default function App() {
           style={{
             alignItems: "flex-end",
             backgroundColor: "lightblue",
+            flexGrow: 1,
           }}
         >
           <GetSection />
@@ -104,9 +157,12 @@ export default function App() {
 const styles = StyleSheet.create({
   sectionButton: {
     alignSelf: "flex-start",
-    borderRadius: 25,
-    paddingHorizontal: 20,
+    borderLeftWidth: 2,
+    paddingHorizontal: 10,
     marginVertical: 5,
-    backgroundColor: "darkseagreen",
+  },
+  sectionButtonText: {
+    fontFamily: "HelveticaNeue",
+    fontSize: 20,
   },
 });
