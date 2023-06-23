@@ -1,12 +1,27 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 import { sections } from "../contents/sectionContents";
 
-export default function useSection() {
-  const [sectionID, SetSectionID] = useState(0);
+const SectionContext = createContext({});
+export const SectionProvider = ({ children }) => {
+  const [currentSectionID, SetSectionID] = useState(sections.length - 1);
 
-  return 
-  {
-    sectionID, 
-  };
+  const sectionMemo = useMemo(
+    () => ({
+      currentSectionID,
+      currentSectionData: sections[currentSectionID],
+      SetSection: (ID) => SetSectionID(ID),
+      GetSectionData: (ID) => sections[ID],
+    }),
+    [currentSectionID]
+  );
+
+  return (
+    <SectionContext.Provider value={sectionMemo}>
+      {children}
+    </SectionContext.Provider>
+  );
+};
+
+export default function useSection() {
+  return useContext(SectionContext);
 }

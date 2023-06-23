@@ -1,31 +1,27 @@
-import { View, TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 import React, { useRef, useState } from "react";
+import { AntDesign } from "@expo/vector-icons";
 import Swiper from "react-native-web-swiper";
 
 import ProjectCards from "../components/ProjectCards";
 import { projects } from "../contents/projectContents";
-import { colors } from "../styles";
+import useDarkMode from "../hooks/useDarkMode";
 
 export default function Project() {
+  const { modeColorElevated, invertColorElevated } = useDarkMode();
+
   const swiperRef = useRef(null);
   const [currentID, SetCurrentID] = useState(0);
 
   return (
-    <View
-      style={{
-        width: "90%",
-        height: "90%",
-        alignSelf: "center",
-      }}
-    >
+    <View style={styles.container}>
       <Swiper
         ref={swiperRef}
         controlsEnabled={false}
         innerContainerStyle={{
           overflow: "visible",
-          backgroundColor: colors.lightElevated,
           borderRadius: 15,
+          backgroundColor: modeColorElevated,
         }}
         onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
       >
@@ -35,17 +31,7 @@ export default function Project() {
         <ProjectCards projectData={projects[3]} />
         <ProjectCards projectData={projects[4]} />
       </Swiper>
-      <View
-        style={{
-          width: "100%",
-          position: "absolute",
-          flexDirection: "row",
-          bottom: 0,
-          transform: [{ scaleY: -1 }],
-          justifyContent: "space-between",
-        }}
-        pointerEvents="box-none"
-      >
+      <View style={styles.navContainer} pointerEvents="box-none">
         <TouchableOpacity
           onPress={() => {
             swiperRef.current.goToPrev();
@@ -56,7 +42,7 @@ export default function Project() {
           <AntDesign
             name="swapleft"
             size={55}
-            color={currentID === 0 ? "#99999988" : "black"}
+            color={currentID === 0 ? "transparent" : invertColorElevated}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -69,10 +55,30 @@ export default function Project() {
           <AntDesign
             name="swapright"
             size={55}
-            color={currentID === projects.length - 1 ? "#99999988" : "black"}
+            color={
+              currentID === projects.length - 1
+                ? "transparent"
+                : invertColorElevated
+            }
           />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: "90%",
+    height: "90%",
+    alignSelf: "center",
+  },
+  navContainer: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    position: "absolute",
+    bottom: 0,
+    transform: [{ scaleY: -1 }],
+  },
+});
