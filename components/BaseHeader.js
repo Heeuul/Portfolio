@@ -27,10 +27,14 @@ export default function BaseHeader() {
           }}
         />
         <View style={{}}>
-          <Text style={{ fontFamily: "HelveticaNeue", fontSize: 30, padding: 0 }}>
+          <Text
+            style={{ fontFamily: "HelveticaNeue", fontSize: 30, padding: 0 }}
+          >
             React Native
           </Text>
-          <Text style={{ fontFamily: "HelveticaNeue", fontSize: 15, padding: 1 }}>
+          <Text
+            style={{ fontFamily: "HelveticaNeue", fontSize: 15, padding: 1 }}
+          >
             Developer/Programmer
           </Text>
         </View>

@@ -1,5 +1,5 @@
-import { View, TouchableOpacity } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import { View, TouchableOpacity, Platform } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 import React, { useRef, useState } from "react";
 import Swiper from "react-native-web-swiper";
 
@@ -18,12 +18,17 @@ export default function Project() {
         alignItems: "center",
       }}
     >
-      <View style={{ width: "80%", height: "80%" }}>
+      <View
+        style={{ width: "80%", height: "80%" }}
+        pointerEvents={Platform.OS === "web" ? "none" : "box-none"}
+      >
         <Swiper
           ref={swiperRef}
           controlsEnabled={false}
+          gesturesEnabled={() => false}
           innerContainerStyle={{ overflow: "visible" }}
           onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
+          pointerEvents="none"
         >
           <ProjectCards projectData={projects[0]} />
           <ProjectCards projectData={projects[1]} />
@@ -31,44 +36,44 @@ export default function Project() {
           <ProjectCards projectData={projects[3]} />
           <ProjectCards projectData={projects[4]} />
         </Swiper>
-        <View
-          style={{
-            width: "100%",
-            height: "100%",
-            flexDirection: "row",
-            position: "absolute",
-            alignItems: "center",
-            justifyContent: "space-between",
+      </View>
+      <View
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+        pointerEvents="box-none"
+      >
+        <TouchableOpacity
+          onPress={() => {
+            swiperRef.current.goToPrev();
+            SetCurrentID(currentID - 1);
           }}
-          pointerEvents="box-none"
+          disabled={currentID === 0}
         >
-          <TouchableOpacity
-            onPress={() => {
-              swiperRef.current.goToPrev();
-              SetCurrentID(currentID - 1);
-            }}
-            disabled={currentID === 0}
-          >
-            <SimpleLineIcons
-              name="arrow-left"
-              size={35}
-              color={currentID === 0 ? "#99999988" : "black"}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              swiperRef.current.goToNext();
-              SetCurrentID(currentID + 1);
-            }}
-            disabled={currentID === projects.length - 1}
-          >
-            <SimpleLineIcons
-              name="arrow-right"
-              size={35}
-              color={currentID === projects.length - 1 ? "#99999988" : "black"}
-            />
-          </TouchableOpacity>
-        </View>
+          <Entypo
+            name="chevron-thin-left"
+            size={45}
+            color={currentID === 0 ? "#99999988" : "black"}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            swiperRef.current.goToNext();
+            SetCurrentID(currentID + 1);
+          }}
+          disabled={currentID === projects.length - 1}
+        >
+          <Entypo
+            name="chevron-thin-right"
+            size={45}
+            color={currentID === projects.length - 1 ? "#99999988" : "black"}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
