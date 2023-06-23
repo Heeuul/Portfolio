@@ -5,39 +5,35 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import { useEffect, useState } from "react";
-import * as Font from "expo-font";
 import {
   SafeAreaProvider,
   SafeAreaView,
   initialWindowMetrics,
 } from "react-native-safe-area-context";
+import { useEffect, useState } from "react";
+import * as Font from "expo-font";
 
 import { sections } from "./contents/sectionContents";
 import BaseHeader from "./components/BaseHeader";
 import BaseFooter from "./components/BaseFooter";
 import { colors } from "./styles";
 import { StatusBar } from "expo-status-bar";
+import useDarkMode from "./hooks/useDarkMode";
+import useCustomFont from "./hooks/useCustomFont";
 
 export default function App() {
   const { width, height } = useWindowDimensions();
-  const [section, SetSection] = useState(0);
 
-  const [darkMode, SetDarkMode] = useState(false);
-  const [fontsLoaded, SetFontLoaded] = useState(false);
-  useEffect(() => {
-    Font.loadAsync({
-      HelveticaNeue: require("./fonts/HelveticaNeue-Light.otf"),
-    }).then(() => SetFontLoaded(true));
-  }, []);
+  const { isDarkMode, ToggleDarkMode } = useDarkMode();
+  const fontsLoaded = useCustomFont();
 
   return fontsLoaded ? (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <StatusBar style={darkMode ? "dark" : "light"} />
+      <StatusBar style={isDarkMode ? "dark" : "light"} />
       <SafeAreaView
         style={[
           styles.container,
-          { backgroundColor: darkMode ? colors.light : colors.dark },
+          { backgroundColor: isDarkMode ? colors.light : colors.dark },
         ]}
       >
         <View
@@ -45,7 +41,7 @@ export default function App() {
             styles.innerContainer,
             {
               flexDirection: width > height ? "row-reverse" : "column-reverse",
-              backgroundColor: darkMode ? colors.dark : colors.light,
+              backgroundColor: isDarkMode ? colors.dark : colors.light,
             },
           ]}
         >
@@ -56,7 +52,7 @@ export default function App() {
             {sections[section].component}
           </View>
           <View style={styles.baseContainer}>
-            <TouchableOpacity onPress={() => SetDarkMode(!darkMode)}>
+            <TouchableOpacity onPress={() => ToggleDarkMode()}>
               <BaseHeader />
             </TouchableOpacity>
             <BaseFooter UpdateSection={SetSection} />
