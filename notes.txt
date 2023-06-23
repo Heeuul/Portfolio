@@ -45,7 +45,7 @@ Things to do:
 -----------------------------------------------------------------
 
 2. Portfolio (App, website): 
-   > Light & dark mode - background image of sun & moon 
+   > Light & dark mode - hooks, background image of sun & moon 
    > Button animations with logos 
    > Layout (but horizontal): 
       https://www.awwwards.com/inspiration/digital-design-studio-clean-graphic-design-and-identity-strategy 

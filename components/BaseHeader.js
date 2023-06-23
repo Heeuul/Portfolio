@@ -1,20 +1,27 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
+import { colors } from "../styles";
+
 export default function BaseHeader() {
   return (
     <View>
       <Text
         style={{
           fontFamily: "HelveticaNeue",
-          fontSize: 65,
-          borderBottomWidth: 2,
+          fontSize: 55,
           lineHeight: 75,
         }}
       >
         Aiman Hans
       </Text>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          backgroundColor: colors.lightElevated,
+          borderRadius: 15,
+        }}
+      >
         <Image
           source={{
             uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
@@ -26,7 +33,7 @@ export default function BaseHeader() {
             marginHorizontal: 5,
           }}
         />
-        <View style={{}}>
+        <View>
           <Text
             style={{ fontFamily: "HelveticaNeue", fontSize: 30, padding: 0 }}
           >

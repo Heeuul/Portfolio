@@ -2,11 +2,17 @@ import { View, Text, StyleSheet, SectionList } from "react-native";
 import React from "react";
 
 import { skills } from "../contents/skillContents";
+import { colors } from "../styles";
 
 export default function Skill() {
   return (
-    <View style={{ flex: 1 }}>
-      <Text style={styles.headerText}>Skills</Text>
+    <View
+      style={{
+        width: "90%",
+        height: "90%",
+        alignSelf: "flex-end",
+      }}
+    >
       <View style={{ flexShrink: 1 }}>
         <SectionList
           sections={skills}
@@ -17,7 +23,11 @@ export default function Skill() {
           renderItem={({ item }) => (
             <Text style={styles.contentText}>{item}</Text>
           )}
-          style={{ borderTopWidth: 1, borderBottomWidth: 1 }}
+          style={{
+            backgroundColor: colors.lightElevated,
+            borderTopLeftRadius: 25,
+            borderBottomLeftRadius: 25,
+          }}
           showsVerticalScrollIndicator={false}
         />
       </View>
@@ -26,12 +36,6 @@ export default function Skill() {
 }
 
 const styles = StyleSheet.create({
-  headerText: {
-    fontFamily: "HelveticaNeue",
-    fontSize: 50,
-    textAlign: "right",
-    fontWeight: "bold",
-  },
   categoryText: {
     fontFamily: "HelveticaNeue",
     fontSize: 35,
