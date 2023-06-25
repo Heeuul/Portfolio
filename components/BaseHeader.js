@@ -1,21 +1,15 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 
-import { colors } from "../styles";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function BaseHeader() {
-  const { isDarkMode, ToggleDarkMode, modeColorElevated, invertColor } =
-    useDarkMode();
+  const { invertColor } = useDarkMode();
 
   return (
     <View>
       <Text style={[styles.nameText, { color: invertColor }]}>Aiman Hans</Text>
-      <TouchableOpacity
-        style={[styles.titleButton, { backgroundColor: modeColorElevated }]}
-        onPress={() => ToggleDarkMode()}
-      >
+      <View style={styles.titleButton}>
         <Image
           source={{
             uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
@@ -30,13 +24,7 @@ export default function BaseHeader() {
             Developer/Programmer
           </Text>
         </View>
-        <MaterialCommunityIcons
-          name={isDarkMode ? "weather-night" : "weather-sunny"}
-          size={isDarkMode ? 30 : 33}
-          color={colors.light}
-          style={styles.modeIcon}
-        />
-      </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -46,10 +34,10 @@ const styles = StyleSheet.create({
     fontFamily: "HelveticaNeue",
     fontSize: 55,
     lineHeight: 75,
+    textDecorationLine: "underline",
   },
   titleButton: {
     flexDirection: "row",
-    borderRadius: 15,
   },
   reactLogo: {
     resizeMode: "contain",
@@ -66,5 +54,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     padding: 1,
   },
-  modeIcon: { position: "absolute", right: 0, bottom: 0, padding: 3 },
 });

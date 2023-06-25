@@ -9,24 +9,22 @@ export default function Skill() {
 
   return (
     <View style={styles.container}>
-      <View style={{ flexShrink: 1 }}>
-        <SectionList
-          sections={skills}
-          keyExtractor={(item, index) => item + index}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text style={[styles.categoryText, { color: invertColor }]}>
-              {title}
-            </Text>
-          )}
-          renderItem={({ item }) => (
-            <Text style={[styles.contentText, { color: invertColor }]}>
-              {item}
-            </Text>
-          )}
-          style={[styles.listContainer, { backgroundColor: modeColorElevated }]}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+      <SectionList
+        sections={skills}
+        keyExtractor={(item, index) => item + index}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={[styles.categoryText, { color: invertColor }]}>
+            {title}
+          </Text>
+        )}
+        renderItem={({ item }) => (
+          <Text style={[styles.contentText, { color: invertColor }]}>
+            {item}
+          </Text>
+        )}
+        style={[styles.listContainer, { backgroundColor: modeColorElevated }]}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }

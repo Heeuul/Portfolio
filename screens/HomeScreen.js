@@ -10,6 +10,7 @@ import useDarkMode from "../hooks/useDarkMode";
 
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
+
   const { modeColor } = useDarkMode();
 
   return (
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   innerContainer: {
-    width: "95%",
-    height: "95%",
+    width: "90%",
+    height: "90%",
     justifyContent: "space-between",
     padding: 25,
     borderRadius: 25,

@@ -1,12 +1,24 @@
-import { View, FlatList } from "react-native";
+import { View, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 
-import SectionButton from "./SectionButton";
 import { sections } from "../contents/sectionContents";
+import SectionButton from "./SectionButton";
+import useDarkMode from "../hooks/useDarkMode";
 
 export default function BaseFooter() {
+  const { isDarkMode, invertColor, ToggleDarkMode } = useDarkMode();
+
   return (
     <View>
+      <TouchableOpacity onPress={() => ToggleDarkMode()}>
+        <MaterialCommunityIcons
+          name={isDarkMode ? "weather-night" : "weather-sunny"}
+          size={isDarkMode ? 30 : 32}
+          color={invertColor}
+          style={styles.modeIcon}
+        />
+      </TouchableOpacity>
       <FlatList
         data={sections}
         keyExtractor={(item) => item.id}
@@ -16,3 +28,9 @@ export default function BaseFooter() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  modeIcon: {
+    padding: 5,
+  },
+});
