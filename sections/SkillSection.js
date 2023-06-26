@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SectionList } from "react-native";
+import { Text, StyleSheet, SectionList } from "react-native";
 import React from "react";
 
 import { skills } from "../contents/skillContents";
@@ -8,34 +8,28 @@ export default function Skill() {
   const { invertColor, modeColorElevated } = useDarkMode();
 
   return (
-    <View style={styles.container}>
-      <SectionList
-        sections={skills}
-        keyExtractor={(item, index) => item + index}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={[styles.categoryText, { color: invertColor }]}>
-            {title}
-          </Text>
-        )}
-        renderItem={({ item }) => (
-          <Text style={[styles.contentText, { color: invertColor }]}>
-            {item}
-          </Text>
-        )}
-        style={[styles.listContainer, { backgroundColor: modeColorElevated }]}
-        showsVerticalScrollIndicator={false}
-      />
-    </View>
+    <SectionList
+      sections={skills}
+      keyExtractor={(item, index) => item + index}
+      renderSectionHeader={({ section: { title } }) => (
+        <Text style={[styles.categoryText, { color: invertColor }]}>
+          {title}
+        </Text>
+      )}
+      renderItem={({ item }) => (
+        <Text style={[styles.contentText, { color: invertColor }]}>{item}</Text>
+      )}
+      style={[styles.container, { backgroundColor: modeColorElevated }]}
+      showsVerticalScrollIndicator={false}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "90%",
-    height: "90%",
     alignSelf: "flex-end",
-  },
-  listContainer: {
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,
   },

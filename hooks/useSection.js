@@ -3,7 +3,7 @@ import { sections } from "../contents/sectionContents";
 
 const SectionContext = createContext({});
 export const SectionProvider = ({ children }) => {
-  const [currentSectionID, SetSectionID] = useState(sections.length - 1);
+  const [currentSectionID, SetSectionID] = useState(2);
 
   const sectionMemo = useMemo(
     () => ({
