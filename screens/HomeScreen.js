@@ -1,5 +1,4 @@
 import { View, useWindowDimensions, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 
@@ -10,11 +9,10 @@ import useDarkMode from "../hooks/useDarkMode";
 
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
-
   const { modeColor } = useDarkMode();
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: "#121212" }]}>
+    <View style={styles.container}>
       <StatusBar style="light" />
       <View
         style={[
@@ -31,15 +29,17 @@ export default function HomeScreen() {
           <BaseFooter />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: "100%",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#121212",
   },
   innerContainer: {
     width: "90%",

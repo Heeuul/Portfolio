@@ -19,7 +19,7 @@ export default function Content() {
 
 const styles = StyleSheet.create({
   contentContainer: {
-    flexGrow: 1,
+    flex: 1,
   },
   contentHeaderText: {
     fontFamily: "HelveticaNeue",

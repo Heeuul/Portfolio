@@ -27,8 +27,9 @@ export default function Skill() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: "90%",
+    height: "85%",
+    padding: 10,
     alignSelf: "flex-end",
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,

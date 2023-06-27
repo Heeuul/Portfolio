@@ -1,18 +1,11 @@
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  useWindowDimensions,
-} from "react-native";
+import { View, Text, FlatList, StyleSheet } from "react-native";
 import React from "react";
 
 import { experiences } from "../contents/experienceContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Experience() {
-  const { width, height } = useWindowDimensions();
-  const { invertColor } = useDarkMode();
+  const { invertColor, modeColorElevated } = useDarkMode();
 
   return (
     <FlatList
@@ -27,18 +20,33 @@ export default function Experience() {
             {item.role}
           </Text>
           {item.tasks.map((task) => (
-            <Text style={[styles.taskText, { color: invertColor }]}>
-              {task}
-            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={[
+                  styles.taskText,
+                  { paddingRight: 15, color: invertColor },
+                ]}
+              >
+                {"\u2022"}
+              </Text>
+              <Text style={[styles.taskText, { color: invertColor }]}>
+                {task}
+              </Text>
+            </View>
           ))}
         </View>
       )}
-      inverted
       style={{
-        flex: 1,
-        height: "100%",
-        // position: height < width ? "absolute" : undefined,
+        backgroundColor: modeColorElevated,
+        width: "90%",
+        height: "90%",
+        alignSelf: "flex-end",
+        padding: 10,
+        borderTopRightRadius: 25,
+        borderBottomLeftRadius: 25,
       }}
+      showsVerticalScrollIndicator={false}
+      inverted
     />
   );
 }
@@ -48,15 +56,16 @@ const styles = StyleSheet.create({
     fontFamily: "HelveticaNeue",
     fontSize: 35,
     textAlign: "right",
+    textTransform: "uppercase",
   },
   roleText: {
     fontFamily: "HelveticaNeue",
     fontSize: 25,
     textAlign: "right",
+    textDecorationLine: "underline",
   },
   taskText: {
     fontFamily: "HelveticaNeue",
     fontSize: 25,
-    textAlign: "right",
   },
 });

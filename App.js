@@ -1,8 +1,3 @@
-import {
-  SafeAreaProvider,
-  initialWindowMetrics,
-} from "react-native-safe-area-context";
-
 import { DarkModeProvider } from "./hooks/useDarkMode";
 import { SectionProvider } from "./hooks/useSection";
 import useCustomFont from "./hooks/useCustomFont";
@@ -16,9 +11,7 @@ export default function App() {
   return fontsLoaded ? (
     <DarkModeProvider>
       <SectionProvider>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <HomeScreen />
-        </SafeAreaProvider>
+        <HomeScreen />
       </SectionProvider>
     </DarkModeProvider>
   ) : (
