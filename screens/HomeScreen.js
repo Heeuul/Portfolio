@@ -5,12 +5,13 @@ import React from "react";
 import BaseHeader from "../components/BaseHeader";
 import BaseFooter from "../components/BaseFooter";
 import useDarkMode from "../hooks/useDarkMode";
+import useSection from "../hooks/useSection";
 
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
 
   const { currentSectionData } = useSection();
-  const { modeColor } = useDarkMode();
+  const { modeColor, invertColorElevated } = useDarkMode();
 
   return (
     <View style={styles.container}>
@@ -24,7 +25,16 @@ export default function HomeScreen() {
           },
         ]}
       >
-        <View style={styles.contentContainer}>
+        <View
+          style={[
+            styles.contentContainer,
+            width < height && {
+              borderTopWidth: 1,
+              borderBottomWidth: 1,
+              borderColor: invertColorElevated,
+            },
+          ]}
+        >
           {currentSectionData.component}
         </View>
         <View style={styles.baseContainer}>

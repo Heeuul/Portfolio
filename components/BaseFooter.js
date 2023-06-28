@@ -10,8 +10,17 @@ export default function BaseFooter() {
   const { isDarkMode, invertColor, ToggleDarkMode } = useDarkMode();
 
   return (
-    <View>
-      <TouchableOpacity onPress={() => ToggleDarkMode()}>
+    <View style={{ flexDirection: "row" }}>
+      <FlatList
+        data={sections}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <SectionButton sectionID={item.id} />}
+        scrollEnabled={false}
+      />
+      <TouchableOpacity
+        onPress={() => ToggleDarkMode()}
+        style={{ alignSelf: "flex-end" }}
+      >
         <MaterialCommunityIcons
           name={isDarkMode ? "weather-night" : "weather-sunny"}
           size={isDarkMode ? 30 : 32}
@@ -19,12 +28,6 @@ export default function BaseFooter() {
           style={styles.modeIcon}
         />
       </TouchableOpacity>
-      <FlatList
-        data={sections}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <SectionButton sectionID={item.id} />}
-        scrollEnabled={false}
-      />
     </View>
   );
 }
