@@ -4,11 +4,12 @@ import React from "react";
 
 import BaseHeader from "../components/BaseHeader";
 import BaseFooter from "../components/BaseFooter";
-import Content from "../components/Content";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
+
+  const { currentSectionData } = useSection();
   const { modeColor } = useDarkMode();
 
   return (
@@ -23,7 +24,9 @@ export default function HomeScreen() {
           },
         ]}
       >
-        <Content />
+        <View style={styles.contentContainer}>
+          {currentSectionData.component}
+        </View>
         <View style={styles.baseContainer}>
           <BaseHeader />
           <BaseFooter />
@@ -48,6 +51,10 @@ const styles = StyleSheet.create({
     padding: 25,
     borderRadius: 25,
     overflow: "hidden",
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: "center",
   },
   baseContainer: {
     justifyContent: "space-between",
