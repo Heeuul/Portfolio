@@ -11,7 +11,7 @@ export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
 
   const { currentSectionData } = useSection();
-  const { modeColor, invertColorElevated } = useDarkMode();
+  const { modeColor, betweenColor } = useDarkMode();
 
   return (
     <View style={styles.container}>
@@ -31,7 +31,7 @@ export default function HomeScreen() {
             width < height && {
               borderTopWidth: 1,
               borderBottomWidth: 1,
-              borderColor: invertColorElevated,
+              borderColor: betweenColor,
             },
           ]}
         >

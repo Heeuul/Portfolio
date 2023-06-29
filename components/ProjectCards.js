@@ -4,13 +4,11 @@ import React from "react";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function ProjectCards({ projectData }) {
-  const { invertColor, invertColorElevated } = useDarkMode();
+  const { invertColor, betweenColor } = useDarkMode();
 
   return (
     <View key={projectData.id} style={styles.container}>
-      <View
-        style={[styles.contentContainer, { borderColor: invertColorElevated }]}
-      >
+      <View style={[styles.contentContainer, { borderColor: betweenColor }]}>
         <Text style={[styles.titleText, { color: invertColor }]}>
           {projectData.name}
         </Text>

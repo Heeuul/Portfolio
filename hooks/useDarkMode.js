@@ -9,13 +9,8 @@ export const DarkModeProvider = ({ children }) => {
     () => ({
       isDarkMode,
       modeColor: isDarkMode ? colors.dark : colors.light,
-      modeColorElevated: isDarkMode
-        ? colors.darkElevated
-        : colors.lightElevated,
       invertColor: isDarkMode ? colors.light : colors.dark,
-      invertColorElevated: isDarkMode
-        ? colors.lightElevated
-        : colors.darkElevated,
+      betweenColor: colors.center,
       ToggleDarkMode: () => {
         SetDarkMode(!isDarkMode);
       },

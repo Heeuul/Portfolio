@@ -17,7 +17,7 @@ export const details = {
   },
   page: {
     inspiration: "Keita Yamada",
-    inspirationSite: "https://p5aholic.me/projects/",
+    inspirationSite: "p5aholic.me/projects/",
     framework: "React Native",
     host: "GitHub Pages",
   },

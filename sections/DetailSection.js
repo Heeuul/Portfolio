@@ -2,11 +2,10 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
   useWindowDimensions,
   Linking,
+  ScrollView,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 
 import { details } from "../contents/detailsContents";
@@ -14,78 +13,81 @@ import useDarkMode from "../hooks/useDarkMode";
 
 export default function Detail() {
   const { width, height } = useWindowDimensions();
-  const { isDarkMode, invertColor, modeColorElevated } = useDarkMode();
+  const { isDarkMode, invertColor, betweenColor } = useDarkMode();
 
-  const [personal, SetPersonal] = useState(true);
+  const [personalSection, SetPersonalSection] = useState(true);
 
   function PersonalRender() {
     return (
       <View style={{ flex: 1 }}>
         <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          {details.personal.name}
+          <Text
+            style={{
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
+            }}
+          >
+            {"email" + "\n"}
+          </Text>
+          <Text
+            style={{
+              fontSize: 30,
+              color: invertColor,
+              textDecorationLine: "none",
+            }}
+            pointerEvents="none"
+          >
+            {details.personal.email}
+          </Text>
         </Text>
+
         <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          {details.personal.nickname}
+          <Text
+            style={{
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
+            }}
+          >
+            {"phone" + "\n"}
+          </Text>
+          <Text style={{ fontSize: 30, color: invertColor }}>
+            {details.personal.phone}
+          </Text>
         </Text>
+
         <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          {details.personal.email}
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
-        >
-          {details.personal.phone}
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
-        >
-          {details.personal.location}
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
-        >
-          {details.personal.interests.join(", ")}
+          <Text
+            style={{
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
+            }}
+          >
+            {"interests" + "\n"}
+          </Text>
+          <Text style={{ fontSize: 30, color: invertColor }}>
+            {details.personal.interests.join(", ")}
+          </Text>
         </Text>
       </View>
     );
@@ -94,50 +96,75 @@ export default function Detail() {
     return (
       <View style={{ flex: 1 }}>
         <Text
-          style={[
-            styles.text,
-            {
-              color: invertColor,
-              textAlign: width > height ? "right" : "left",
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          <Text>
-            {"This page's design is inspired by " +
-              details.page.inspiration +
-              "'s portfolio: "}
-          </Text>
           <Text
             style={{
-              color: isDarkMode ? "lightblue" : "blue",
-              textDecorationLine: "underline",
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
             }}
-            onPress={() => Linking.openURL("https://p5aholic.me/projects/")}
           >
-            {details.page.inspirationSite}
+            {"design inspired by" + "\n"}
+          </Text>
+          <Text style={{ fontSize: 30, color: invertColor }}>
+            <Text>{details.page.inspiration + "'s "}</Text>
+            <Text
+              style={{
+                color: isDarkMode ? "lightblue" : "blue",
+                textDecorationLine: "underline",
+              }}
+              onPress={() => Linking.openURL("https://p5aholic.me/projects/")}
+            >
+              portfolio
+            </Text>
           </Text>
         </Text>
+
         <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          {"This page is made using " + details.page.framework}
+          <Text
+            style={{
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
+            }}
+          >
+            {"made using" + "\n"}
+          </Text>
+          <Text style={{ fontSize: 30, color: invertColor }}>
+            {details.page.framework}
+          </Text>
         </Text>
+
         <Text
-          style={[
-            styles.text,
-            {
-              textAlign: width > height ? "right" : "left",
-              color: invertColor,
-            },
-          ]}
+          style={{
+            fontFamily: "HelveticaNeue",
+            textAlign: "right",
+            paddingBottom: 10,
+          }}
         >
-          {"This page is hosted on " + details.page.host}
+          <Text
+            style={{
+              fontSize: 20,
+              color: betweenColor,
+              paddingHorizontal: 5,
+            }}
+          >
+            {"hosted on" + "\n"}
+          </Text>
+          <Text style={{ fontSize: 30, color: invertColor }}>
+            {details.page.host}
+          </Text>
         </Text>
       </View>
     );
@@ -151,45 +178,37 @@ export default function Detail() {
         alignItems: width > height ? "flex-end" : "flex-start",
       }}
     >
-      <View style={{}}>
-        <TouchableOpacity
-          onPress={() => SetPersonal(true)}
+      <View>
+        <Text
           style={{
-            padding: 1,
-            margin: 5,
-            backgroundColor: personal ? modeColorElevated : "transparent",
-            borderColor: personal ? invertColor : "transparent",
-            borderRightWidth: 1,
-            borderBottomWidth: 1,
-            borderRadius: 5,
+            fontFamily: "HelveticaNeue",
+            fontSize: 15,
+            color: betweenColor,
+            textTransform: "uppercase",
+            textDecorationLine: personalSection ? "underline" : "none",
           }}
+          onPress={() => SetPersonalSection(true)}
         >
-          <MaterialIcons name="contact-page" size={25} color="white" />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => SetPersonal(false)}
+          Personal Detail
+        </Text>
+        <Text
           style={{
-            padding: 1,
-            margin: 5,
-            backgroundColor: personal ? "transparent" : modeColorElevated,
-            borderColor: personal ? "transparent" : invertColor,
-            borderRightWidth: 1,
-            borderBottomWidth: 1,
-            borderRadius: 5,
+            fontFamily: "HelveticaNeue",
+            fontSize: 15,
+            color: betweenColor,
+            textTransform: "uppercase",
+            textDecorationLine: personalSection ? "none" : "underline",
           }}
+          onPress={() => SetPersonalSection(false)}
         >
-          <MaterialIcons name="find-in-page" size={25} color="white" />
-        </TouchableOpacity>
+          Page Detail
+        </Text>
       </View>
-      {personal ? PersonalRender() : PageRender()}
+      <ScrollView>
+        {personalSection ? PersonalRender() : PageRender()}
+      </ScrollView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: "HelveticaNeue",
-    fontSize: 25,
-    paddingBottom: 25,
-  },
-});
+const styles = StyleSheet.create({});

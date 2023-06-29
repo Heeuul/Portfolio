@@ -5,7 +5,7 @@ import useDarkMode from "../hooks/useDarkMode";
 import useSection from "../hooks/useSection";
 
 export default function SectionButton({ sectionID }) {
-  const { modeColor, modeColorElevated, invertColor } = useDarkMode();
+  const { modeColor, betweenColor, invertColor } = useDarkMode();
   const { currentSectionID, GetSectionData, SetSection } = useSection();
 
   return (
@@ -13,9 +13,9 @@ export default function SectionButton({ sectionID }) {
       style={[
         styles.sectionButton,
         {
-          borderColor: modeColorElevated,
+          borderColor: betweenColor,
           backgroundColor:
-            sectionID === currentSectionID ? modeColorElevated : modeColor,
+            sectionID === currentSectionID ? betweenColor : modeColor,
         },
       ]}
       onPress={() => SetSection(sectionID)}

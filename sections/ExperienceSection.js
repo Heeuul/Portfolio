@@ -1,11 +1,19 @@
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  useWindowDimensions,
+  Linking,
+} from "react-native";
 import React from "react";
 
 import { experiences } from "../contents/experienceContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Experience() {
-  const { invertColor, modeColorElevated } = useDarkMode();
+  const { width, height } = useWindowDimensions();
+  const { invertColor, betweenColor } = useDarkMode();
 
   return (
     <FlatList
@@ -13,23 +21,47 @@ export default function Experience() {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <View>
-          <Text style={[styles.companyText, { color: invertColor }]}>
-            {item.company}
-          </Text>
-          <Text style={[styles.roleText, { color: invertColor }]}>
+          <Text
+            style={{
+              fontFamily: "HelveticaNeue",
+              textAlign: "right",
+              color: betweenColor,
+              fontSize: 20,
+              textTransform: "lowercase",
+              paddingRight: 5,
+            }}
+          >
             {item.role}
           </Text>
-          {item.tasks.map((task) => (
-            <View style={{ flexDirection: "row" }}>
+          <Text
+            style={{
+              fontFamily: "HelveticaNeue",
+              textAlign: "right",
+              color: invertColor,
+              fontSize: 35,
+              textTransform: "uppercase",
+              textDecorationLine: "underline",
+              marginBottom: 15,
+            }}
+            onPress={() => Linking.openURL(item.website)}
+          >
+            {item.company}
+          </Text>
+
+          {item.tasks.map((task, i) => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
               <Text
                 style={[
                   styles.taskText,
-                  { paddingRight: 15, color: invertColor },
+                  { color: i % 2 === 1 ? invertColor : betweenColor },
                 ]}
               >
-                {"\u2022"}
-              </Text>
-              <Text style={[styles.taskText, { color: invertColor }]}>
                 {task}
               </Text>
             </View>
@@ -37,14 +69,11 @@ export default function Experience() {
         </View>
       )}
       style={{
-        backgroundColor: modeColorElevated,
-        width: "90%",
-        height: "90%",
         alignSelf: "flex-end",
-        padding: 10,
         borderTopRightRadius: 25,
         borderBottomLeftRadius: 25,
       }}
+      ItemSeparatorComponent={() => <View style={{ height: 50 }} />}
       showsVerticalScrollIndicator={false}
       inverted
     />
@@ -52,20 +81,9 @@ export default function Experience() {
 }
 
 const styles = StyleSheet.create({
-  companyText: {
-    fontFamily: "HelveticaNeue",
-    fontSize: 35,
-    textAlign: "right",
-    textTransform: "uppercase",
-  },
-  roleText: {
-    fontFamily: "HelveticaNeue",
-    fontSize: 25,
-    textAlign: "right",
-    textDecorationLine: "underline",
-  },
   taskText: {
     fontFamily: "HelveticaNeue",
+    textAlign: "right",
     fontSize: 25,
   },
 });

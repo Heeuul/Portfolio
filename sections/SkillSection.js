@@ -5,21 +5,23 @@ import { skills } from "../contents/skillContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Skill() {
-  const { invertColor, modeColorElevated } = useDarkMode();
+  const { invertColor, betweenColor } = useDarkMode();
 
   return (
     <SectionList
       sections={skills}
       keyExtractor={(item, index) => item + index}
       renderSectionHeader={({ section: { title } }) => (
-        <Text style={[styles.categoryText, { color: invertColor }]}>
+        <Text
+          style={[styles.categoryText, { color: betweenColor, paddingTop: 10 }]}
+        >
           {title}
         </Text>
       )}
       renderItem={({ item }) => (
         <Text style={[styles.contentText, { color: invertColor }]}>{item}</Text>
       )}
-      style={[styles.container, { backgroundColor: modeColorElevated }]}
+      style={styles.container}
       showsVerticalScrollIndicator={false}
     />
   );
@@ -27,22 +29,19 @@ export default function Skill() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
-    height: "85%",
-    padding: 10,
     alignSelf: "flex-end",
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,
   },
   categoryText: {
     fontFamily: "HelveticaNeue",
-    fontSize: 35,
+    fontSize: 20,
     textAlign: "right",
-    textDecorationLine: "underline",
+    textTransform: "lowercase",
   },
   contentText: {
     fontFamily: "HelveticaNeue",
     textAlign: "right",
-    fontSize: 25,
+    fontSize: 30,
   },
 });
