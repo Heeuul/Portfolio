@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from "react";
-import { colors } from "../styles";
+import { colors } from "../assets/styles";
 
 const DarkModeContext = createContext({});
 export const DarkModeProvider = ({ children }) => {

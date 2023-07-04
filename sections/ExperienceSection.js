@@ -13,6 +13,7 @@ import { experiences } from "../contents/experienceContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Experience() {
+  const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
 
   function RenderExperience(item) {
@@ -77,6 +78,7 @@ export default function Experience() {
       ItemSeparatorComponent={() => <View style={{ height: 50 }} />}
       showsVerticalScrollIndicator={false}
       removeClippedSubviews={true}
+      style={{ maxHeight: height * (width > height ? 0.9 : 0.45) }}
     />
   );
 }

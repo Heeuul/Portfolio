@@ -1,4 +1,4 @@
-import { View, useWindowDimensions, StyleSheet, Image } from "react-native";
+import { View, useWindowDimensions, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 

@@ -1,10 +1,17 @@
-import { Text, StyleSheet, SectionList } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  SectionList,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import React from "react";
 
 import { skills } from "../contents/skillContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Skill() {
+  const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
 
   return (
@@ -12,16 +19,18 @@ export default function Skill() {
       sections={skills}
       keyExtractor={(item, index) => item + index}
       renderSectionHeader={({ section: { title } }) => (
-        <Text
-          style={[styles.categoryText, { color: betweenColor, paddingTop: 10 }]}
-        >
+        <Text style={[styles.categoryText, { color: betweenColor }]}>
           {title}
         </Text>
       )}
       renderItem={({ item }) => (
         <Text style={[styles.contentText, { color: invertColor }]}>{item}</Text>
       )}
-      style={styles.container}
+      renderSectionFooter={() => <View style={{ height: 50 }} />}
+      style={[
+        styles.container,
+        { maxHeight: height * (width > height ? 0.9 : 0.5) },
+      ]}
       showsVerticalScrollIndicator={false}
     />
   );
