@@ -127,7 +127,11 @@ export default function Detail() {
           Page Detail
         </Text>
       </View>
-      <ScrollView>
+      <ScrollView
+        scrollEnabled={true}
+        style={{ height: "100%" }}
+        showsVerticalScrollIndicator={false}
+      >
         {personalSection ? PersonalRender() : PageRender()}
       </ScrollView>
     </View>

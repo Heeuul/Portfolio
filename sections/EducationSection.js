@@ -25,15 +25,14 @@ export default function Education() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
-      <FlatList
-        data={educations}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => RenderEdu(item)}
-        inverted
-        ItemSeparatorComponent={() => <View style={{ height: 30 }} />}
-      />
-    </View>
+    <FlatList
+      data={educations}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => RenderEdu(item)}
+      inverted
+      ItemSeparatorComponent={() => <View style={{ height: 30 }} />}
+      showsVerticalScrollIndicator={false}
+    />
   );
 }
 
