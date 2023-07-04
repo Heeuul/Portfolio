@@ -29,9 +29,8 @@ export default function Skill() {
 
 const styles = StyleSheet.create({
   container: {
+    width: "100%",
     alignSelf: "flex-end",
-    borderTopLeftRadius: 25,
-    borderBottomLeftRadius: 25,
   },
   categoryText: {
     fontFamily: "HelveticaNeue",

@@ -5,78 +5,75 @@ import {
   StyleSheet,
   useWindowDimensions,
   Linking,
+  Platform,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { experiences } from "../contents/experienceContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Experience() {
-  const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
 
   function RenderExperience(item) {
     return (
       <View>
         <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            color: betweenColor,
-            fontSize: 20,
-            textTransform: "lowercase",
-            paddingRight: 5,
-          }}
-        >
-          {item.role}
-        </Text>
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            color: invertColor,
-            fontSize: 35,
-            textTransform: "uppercase",
-            textDecorationLine: "underline",
-            marginBottom: 15,
-          }}
+          style={[styles.companyText, { color: invertColor }]}
           onPress={() => Linking.openURL(item.website)}
         >
           {item.company}
         </Text>
+        <Text style={[styles.roleText, { color: betweenColor }]}>
+          {item.role}
+        </Text>
 
-        {item.tasks.map((task, i) => (
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
-          >
-            <Text
-              style={[
-                styles.taskText,
-                { color: i % 2 === 1 ? invertColor : betweenColor },
-              ]}
-            >
-              {task} {/* //! Change to useMemo of components to reduce lag */}
-            </Text>
-          </View>
-        ))}
+        <FlatList
+          data={item.tasks}
+          renderItem={({ item, index }) => RenderTask(item, index)}
+          style={{ width: "95%", alignSelf: "center" }}
+        />
+      </View>
+    );
+  }
+  function RenderTask(item, index) {
+    return (
+      <View style={{ flexDirection: "row" }}>
+        <Text
+          style={[
+            styles.taskText,
+            {
+              color: index % 2 === 0 ? invertColor : betweenColor,
+              marginRight: Platform.OS === "web" ? 10 : 0,
+            },
+          ]}
+        >
+          {"\u2022" + (Platform.OS === "web" ? "" : " ")}
+        </Text>
+        <Text
+          style={[
+            styles.taskText,
+            { color: index % 2 === 0 ? invertColor : betweenColor },
+          ]}
+        >
+          {item}
+        </Text>
       </View>
     );
   }
 
+  const listRef = useRef(null);
+  useEffect(() => {
+    listRef.current.scrollToOffset({ offset: 9999, animated: true });
+  }, []);
+
   return (
     <FlatList
+      ref={listRef}
       data={experiences}
       inverted
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => RenderExperience(item)}
-      style={{
-        borderTopRightRadius: 25,
-        borderBottomLeftRadius: 25,
-      }}
       ItemSeparatorComponent={() => <View style={{ height: 50 }} />}
       showsVerticalScrollIndicator={false}
       removeClippedSubviews={true}
@@ -85,9 +82,25 @@ export default function Experience() {
 }
 
 const styles = StyleSheet.create({
+  companyText: {
+    fontFamily: "HelveticaNeue",
+    textTransform: "uppercase",
+    textAlign: "right",
+    textDecorationLine: "underline",
+    fontSize: 35,
+    alignSelf: "flex-end",
+  },
+  roleText: {
+    fontFamily: "HelveticaNeue",
+    textTransform: "lowercase",
+    textAlign: "right",
+    includeFontPadding: false,
+    marginBottom: 25,
+    fontSize: 20,
+  },
   taskText: {
     fontFamily: "HelveticaNeue",
-    textAlign: "right",
+    textAlign: "left",
     fontSize: 25,
   },
 });

@@ -15,7 +15,7 @@ export const experiences = [
   {
     id: 1,
     company: "Klikx Technologies Sdn Bhd",
-    websiteL: "https://www.klikx.com.my/",
+    website: "https://www.klikx.com.my/",
     location: "Petaling Jaya, Selangor",
     role: "Game Developer",
     tasks: [

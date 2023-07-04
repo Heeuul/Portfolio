@@ -11,7 +11,6 @@ export const details = {
       "Calisthenics",
       "Journaling",
       "Kali",
-      "Personality Psychology",
       "Video games",
     ],
   },

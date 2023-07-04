@@ -20,48 +20,20 @@ export default function Detail() {
   function PersonalRender() {
     return (
       <View style={{ flex: 1 }}>
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"email" + "\n"}
           </Text>
           <Text
-            style={{
-              fontSize: 30,
-              color: invertColor,
-              textDecorationLine: "none",
-            }}
+            style={{ fontSize: 30, color: invertColor }}
             pointerEvents="none"
           >
             {details.personal.email}
           </Text>
         </Text>
 
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"phone" + "\n"}
           </Text>
           <Text style={{ fontSize: 30, color: invertColor }}>
@@ -69,20 +41,8 @@ export default function Detail() {
           </Text>
         </Text>
 
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"interests" + "\n"}
           </Text>
           <Text style={{ fontSize: 30, color: invertColor }}>
@@ -95,20 +55,8 @@ export default function Detail() {
   function PageRender() {
     return (
       <View style={{ flex: 1 }}>
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"design inspired by" + "\n"}
           </Text>
           <Text style={{ fontSize: 30, color: invertColor }}>
@@ -125,20 +73,8 @@ export default function Detail() {
           </Text>
         </Text>
 
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"made using" + "\n"}
           </Text>
           <Text style={{ fontSize: 30, color: invertColor }}>
@@ -146,23 +82,11 @@ export default function Detail() {
           </Text>
         </Text>
 
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            textAlign: "right",
-            paddingBottom: 10,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: betweenColor,
-              paddingHorizontal: 5,
-            }}
-          >
+        <Text style={styles.detailText}>
+          <Text style={[styles.titleText, { color: betweenColor }]}>
             {"hosted on" + "\n"}
           </Text>
-          <Text style={{ fontSize: 30, color: invertColor }}>
+          <Text style={[styles.contentText, { color: invertColor }]}>
             {details.page.host}
           </Text>
         </Text>
@@ -172,33 +96,32 @@ export default function Detail() {
 
   return (
     <View
-      style={{
-        flex: 1,
-        flexDirection: "row",
-        alignItems: width > height ? "flex-end" : "flex-start",
-      }}
+      style={[
+        styles.container,
+        { alignItems: width > height ? "flex-end" : "flex-start" },
+      ]}
     >
       <View>
         <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            fontSize: 15,
-            color: betweenColor,
-            textTransform: "uppercase",
-            textDecorationLine: personalSection ? "underline" : "none",
-          }}
+          style={[
+            styles.buttonText,
+            {
+              color: betweenColor,
+              textDecorationLine: personalSection ? "underline" : "none",
+            },
+          ]}
           onPress={() => SetPersonalSection(true)}
         >
           Personal Detail
         </Text>
         <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            fontSize: 15,
-            color: betweenColor,
-            textTransform: "uppercase",
-            textDecorationLine: personalSection ? "none" : "underline",
-          }}
+          style={[
+            styles.buttonText,
+            {
+              color: betweenColor,
+              textDecorationLine: personalSection ? "none" : "underline",
+            },
+          ]}
           onPress={() => SetPersonalSection(false)}
         >
           Page Detail
@@ -211,4 +134,21 @@ export default function Detail() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  detailText: {
+    fontFamily: "HelveticaNeue",
+    textAlign: "right",
+    paddingBottom: 10,
+  },
+  titleText: { fontSize: 20 },
+  contentText: { fontSize: 30 },
+  buttonText: {
+    fontFamily: "HelveticaNeue",
+    fontSize: 15,
+    textTransform: "uppercase",
+  },
+});

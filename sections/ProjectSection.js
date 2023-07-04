@@ -8,7 +8,7 @@ import { projects } from "../contents/projectContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Project() {
-  const { betweenColor } = useDarkMode();
+  const { invertColor, betweenColor } = useDarkMode();
 
   const swiperRef = useRef(null);
   const [currentID, SetCurrentID] = useState(0);
@@ -42,7 +42,7 @@ export default function Project() {
           <AntDesign
             name="swapleft"
             size={55}
-            color={currentID === 0 ? "transparent" : betweenColor}
+            color={currentID === 0 ? "transparent" : invertColor}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -56,7 +56,7 @@ export default function Project() {
             name="swapright"
             size={55}
             color={
-              currentID === projects.length - 1 ? "transparent" : betweenColor
+              currentID === projects.length - 1 ? "transparent" : invertColor
             }
           />
         </TouchableOpacity>

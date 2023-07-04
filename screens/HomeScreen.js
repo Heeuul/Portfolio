@@ -1,4 +1,4 @@
-import { View, useWindowDimensions, StyleSheet } from "react-native";
+import { View, useWindowDimensions, StyleSheet, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 
@@ -6,6 +6,7 @@ import BaseHeader from "../components/BaseHeader";
 import BaseFooter from "../components/BaseFooter";
 import useDarkMode from "../hooks/useDarkMode";
 import useSection from "../hooks/useSection";
+import Background from "../components/Background";
 
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
@@ -42,6 +43,7 @@ export default function HomeScreen() {
           <BaseFooter />
         </View>
       </View>
+      <Background />
     </View>
   );
 }
