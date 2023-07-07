@@ -137,6 +137,18 @@ export default function ProjectCards({ projectData }) {
           }}
           scrollEnabled={false}
         />
+        <Text
+          style={{
+            fontFamily: "HelveticaNeue",
+            color: betweenColor,
+            textAlign: "center",
+            borderWidth: 1,
+            paddingVertical: 10,
+            borderColor: betweenColor,
+          }}
+        >
+          *images to be added soon*
+        </Text>
       </ScrollView>
     </View>
   );
