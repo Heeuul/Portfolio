@@ -86,7 +86,7 @@ export default function ProjectCards({ projectData }) {
           style={[
             styles.projDescText,
             {
-              color: invertColor,
+              color: betweenColor,
               textAlign: width > height ? "left" : "right",
             },
           ]}
@@ -157,9 +157,7 @@ const styles = StyleSheet.create({
   },
   projTitleText: {
     fontFamily: "HelveticaNeue",
-    fontWeight: "bold",
     fontSize: 30,
-    includeFontPadding: false,
   },
   projDescText: {
     fontFamily: "HelveticaNeue",

@@ -53,5 +53,6 @@ const styles = StyleSheet.create({
     fontFamily: "HelveticaNeue",
     fontSize: 15,
     padding: 1,
+    includeFontPadding: false,
   },
 });
