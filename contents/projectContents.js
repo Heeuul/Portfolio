@@ -6,6 +6,7 @@ export const projects = [
       "Map app to compare travel times from a starting point to multiple destinations.",
     features: [
       "Search Google Map locations with autocomplete",
+      "Multiple place support",
       "Compare travel time durations",
     ],
     technologies: [
@@ -30,7 +31,12 @@ export const projects = [
         uri: "https://github.com/gorhom/react-native-bottom-sheet",
       },
     ],
-    previewPicURI: "",
+    previewPicPaths: [
+      require("../assets/projects/0_LocationComparison/Screenshot_0_LastMinute.png"),
+      require("../assets/projects/0_LocationComparison/Screenshot_1_LastMinute.png"),
+      require("../assets/projects/0_LocationComparison/Screenshot_2_LastMinute.png"),
+      require("../assets/projects/0_LocationComparison/Screenshot_3_LastMinute.png"),
+    ],
   },
   {
     id: 1,
@@ -72,7 +78,7 @@ export const projects = [
         uri: "https://www.npmjs.com/package/heroicons",
       },
     ],
-    previewPicURI: "",
+    previewPicPaths: [],
   },
   {
     id: 2,
@@ -106,7 +112,7 @@ export const projects = [
         uri: "https://github.com/expo/eas-cli",
       },
     ],
-    previewPicURI: "",
+    previewPicPaths: [],
   },
   {
     id: 3,
@@ -135,7 +141,7 @@ export const projects = [
         uri: "https://necolas.github.io/react-native-web/",
       },
     ],
-    previewPicURI: "",
+    previewPicPaths: [],
   },
   {
     id: 4,
@@ -173,6 +179,6 @@ export const projects = [
         uri: "https://momentjs.com",
       },
     ],
-    previewPicURI: "",
+    previewPicPaths: [],
   },
 ];

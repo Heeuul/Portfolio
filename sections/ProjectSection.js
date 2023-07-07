@@ -8,7 +8,7 @@ import { projects } from "../contents/projectContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Project() {
-  const { invertColor } = useDarkMode();
+  const { modeColor, invertColor } = useDarkMode();
 
   const swiperRef = useRef(null);
   const [currentID, SetCurrentID] = useState(0);
@@ -37,10 +37,14 @@ export default function Project() {
             SetCurrentID(currentID - 1);
           }}
           disabled={currentID === 0}
+          style={{
+            backgroundColor: currentID === 0 ? "transparent" : modeColor + "88",
+            borderRadius: 50,
+          }}
         >
           <AntDesign
             name="swapleft"
-            size={55}
+            size={50}
             color={currentID === 0 ? "transparent" : invertColor}
           />
         </TouchableOpacity>
@@ -50,10 +54,17 @@ export default function Project() {
             SetCurrentID(currentID + 1);
           }}
           disabled={currentID === projects.length - 1}
+          style={{
+            backgroundColor:
+              currentID === projects.length - 1
+                ? "transparent"
+                : modeColor + "88",
+            borderRadius: 50,
+          }}
         >
           <AntDesign
             name="swapright"
-            size={55}
+            size={50}
             color={
               currentID === projects.length - 1 ? "transparent" : invertColor
             }

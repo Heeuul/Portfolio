@@ -6,6 +6,8 @@ import {
   Linking,
   useWindowDimensions,
   ScrollView,
+  Image,
+  TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
@@ -15,14 +17,15 @@ export default function ProjectCards({ projectData }) {
   const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
 
-  const [techs, SetTech] = useState([]);
+  const [techs, SetTechs] = useState([]);
+  const [imgs, SetImgs] = useState([]);
   useEffect(() => {
     var techComps = [];
     for (let i = 0; i < projectData.technologies.length; i++) {
       techComps.push(
         <>
           <Text
-            key={i}
+            key={"techComp" + i}
             style={{ textDecorationLine: "underline" }}
             onPress={() => Linking.openURL(projectData.technologies[i].uri)}
           >
@@ -32,8 +35,25 @@ export default function ProjectCards({ projectData }) {
         </>
       );
     }
+    SetTechs(techComps);
 
-    SetTech(techComps);
+    var imgComps = [];
+    let picLen = projectData.previewPicPaths.length;
+    for (let i = 0; i < picLen; i++) {
+      imgComps.push(
+        <TouchableOpacity style={{ flex: 1 }}>
+          <Image
+            source={projectData.previewPicPaths[i]}
+            style={{
+              height: "100%",
+              width: "100%",
+              resizeMode: "contain",
+            }}
+          />
+        </TouchableOpacity>
+      );
+    }
+    SetImgs(imgComps);
   }, []);
 
   function RenderFeature(item, index) {
@@ -137,19 +157,10 @@ export default function ProjectCards({ projectData }) {
           }}
           scrollEnabled={false}
         />
-        <Text
-          style={{
-            fontFamily: "HelveticaNeue",
-            color: betweenColor,
-            textAlign: "center",
-            borderWidth: 1,
-            paddingVertical: 10,
-            borderColor: betweenColor,
-          }}
-        >
-          *images to be added soon*
-        </Text>
       </ScrollView>
+      <View style={[styles.imgContainer, { borderColor: betweenColor }]}>
+        {imgs}
+      </View>
     </View>
   );
 }
@@ -164,12 +175,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   contentContainer: {
+    flex: 1,
     width: "95%",
-    height: "95%",
   },
   projTitleText: {
     fontFamily: "HelveticaNeue",
-    fontSize: 30,
+    fontSize: 35,
   },
   projDescText: {
     fontFamily: "HelveticaNeue",
@@ -183,12 +194,20 @@ const styles = StyleSheet.create({
   },
   techDescText: {
     fontFamily: "HelveticaNeue",
-    fontSize: 15,
-    includeFontPadding: false,
+    fontSize: 25,
   },
   featDescText: {
     fontFamily: "HelveticaNeue",
-    fontSize: 18,
+    fontSize: 25,
     includeFontPadding: false,
+  },
+  imgContainer: {
+    flex: 1,
+    maxHeight: "35%",
+    width: "95%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    borderTopWidth: 1,
+    paddingTop: 5,
   },
 });
