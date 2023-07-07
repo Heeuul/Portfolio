@@ -8,7 +8,7 @@ import { projects } from "../contents/projectContents";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Project() {
-  const { invertColor, betweenColor } = useDarkMode();
+  const { invertColor } = useDarkMode();
 
   const swiperRef = useRef(null);
   const [currentID, SetCurrentID] = useState(0);
@@ -21,7 +21,6 @@ export default function Project() {
         innerContainerStyle={{
           overflow: "visible",
           borderRadius: 15,
-          backgroundColor: betweenColor,
         }}
         onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
       >
@@ -67,8 +66,8 @@ export default function Project() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
-    height: "90%",
+    width: "98%",
+    height: "98%",
     alignSelf: "center",
   },
   navContainer: {

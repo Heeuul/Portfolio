@@ -1,21 +1,143 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Linking,
+  useWindowDimensions,
+  ScrollView,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function ProjectCards({ projectData }) {
+  const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
 
+  const [techs, SetTech] = useState([]);
+  useEffect(() => {
+    var techComps = [];
+    for (let i = 0; i < projectData.technologies.length; i++) {
+      techComps.push(
+        <>
+          <Text
+            key={i}
+            style={{ textDecorationLine: "underline" }}
+            onPress={() => Linking.openURL(projectData.technologies[i].uri)}
+          >
+            {projectData.technologies[i].name}
+          </Text>
+          {i < projectData.technologies.length - 1 && <Text>, </Text>}
+        </>
+      );
+    }
+
+    SetTech(techComps);
+  }, []);
+
+  function RenderFeature(item, index) {
+    return (
+      <View style={{ flexDirection: "row" }}>
+        {width > height && (
+          <Text style={[styles.featDescText, { color: invertColor }]}>
+            {"(" + (index + 1) + ") "}
+          </Text>
+        )}
+        <Text
+          style={[
+            styles.featDescText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: invertColor,
+            },
+          ]}
+        >
+          {item}
+        </Text>
+        {height > width && (
+          <Text style={[styles.featDescText, { color: invertColor }]}>
+            {" (" + (index + 1) + ")"}
+          </Text>
+        )}
+      </View>
+    );
+  }
+
   return (
-    <View key={projectData.id} style={styles.container}>
-      <View style={[styles.contentContainer, { borderColor: betweenColor }]}>
-        <Text style={[styles.titleText, { color: invertColor }]}>
+    <View
+      key={projectData.id}
+      style={[styles.container, { borderColor: betweenColor }]}
+    >
+      <ScrollView style={styles.contentContainer}>
+        <Text
+          style={[
+            styles.projTitleText,
+            {
+              color: invertColor,
+              textAlign: width > height ? "left" : "right",
+            },
+          ]}
+        >
           {projectData.name}
         </Text>
-        <Text style={[styles.descriptionText, { color: invertColor }]}>
+
+        <Text
+          style={[
+            styles.projDescText,
+            {
+              color: invertColor,
+              textAlign: width > height ? "left" : "right",
+            },
+          ]}
+        >
           {projectData.description}
         </Text>
-      </View>
+
+        <Text
+          style={[
+            styles.titleText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: betweenColor,
+            },
+          ]}
+        >
+          technologies
+        </Text>
+        <Text
+          style={[
+            styles.techDescText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: invertColor,
+            },
+          ]}
+        >
+          {techs}
+        </Text>
+
+        <Text
+          style={[
+            styles.titleText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: betweenColor,
+            },
+          ]}
+        >
+          features
+        </Text>
+        <FlatList
+          data={projectData.features}
+          key={({ index }) => "feature" + index}
+          renderItem={({ item, index }) => RenderFeature(item, index)}
+          contentContainerStyle={{
+            alignItems: width > height ? "flex-start" : "flex-end",
+          }}
+          scrollEnabled={false}
+        />
+      </ScrollView>
     </View>
   );
 }
@@ -26,22 +148,37 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
+    borderRightWidth: 2,
+    borderRadius: 10,
   },
   contentContainer: {
     width: "95%",
     height: "95%",
-    borderRightWidth: 2,
-    borderRadius: 10,
-    padding: 15,
   },
-  titleText: {
+  projTitleText: {
     fontFamily: "HelveticaNeue",
     fontWeight: "bold",
-    fontSize: 35,
+    fontSize: 30,
+    includeFontPadding: false,
   },
-  descriptionText: {
+  projDescText: {
     fontFamily: "HelveticaNeue",
-    fontStyle: "italic",
     fontSize: 20,
+    includeFontPadding: false,
+  },
+  titleText: {
+    paddingTop: 10,
+    fontFamily: "HelveticaNeue",
+    fontSize: 20,
+  },
+  techDescText: {
+    fontFamily: "HelveticaNeue",
+    fontSize: 15,
+    includeFontPadding: false,
+  },
+  featDescText: {
+    fontFamily: "HelveticaNeue",
+    fontSize: 18,
+    includeFontPadding: false,
   },
 });

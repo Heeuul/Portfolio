@@ -26,7 +26,7 @@ export const projects = [
         uri: "https://github.com/bramus/react-native-maps-directions",
       },
       {
-        name: "React Native BottomSheet",
+        name: "React Native Bottom Sheet",
         uri: "https://github.com/gorhom/react-native-bottom-sheet",
       },
     ],
