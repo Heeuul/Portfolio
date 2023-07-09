@@ -187,6 +187,11 @@ export const projects = [
         uri: "https://momentjs.com",
       },
     ],
-    previewPicPaths: [],
+    previewPicPaths: [
+      require("../assets/projects/4_StatisticsTracker/Screenshot_0_CryptoPriceTracker.png"),
+      require("../assets/projects/4_StatisticsTracker/Screenshot_1_CryptoPriceTracker.png"),
+      require("../assets/projects/4_StatisticsTracker/Screenshot_2_CryptoPriceTracker.png"),
+      require("../assets/projects/4_StatisticsTracker/Screenshot_3_CryptoPriceTracker.png"),
+    ],
   },
 ];
