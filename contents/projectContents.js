@@ -78,7 +78,14 @@ export const projects = [
         uri: "https://www.npmjs.com/package/heroicons",
       },
     ],
-    previewPicPaths: [],
+    previewPicPaths: [
+      require("../assets/projects/1_FoodDelivery/Screenshot_0_Deliveroo.png"),
+      require("../assets/projects/1_FoodDelivery/Screenshot_1_Deliveroo.png"),
+      require("../assets/projects/1_FoodDelivery/Screenshot_2_Deliveroo.png"),
+      require("../assets/projects/1_FoodDelivery/Screenshot_3_Deliveroo.png"),
+      require("../assets/projects/1_FoodDelivery/Screenshot_4_Deliveroo.png"),
+      require("../assets/projects/1_FoodDelivery/Screenshot_5_Deliveroo.png"),
+    ],
   },
   {
     id: 2,
@@ -119,6 +126,7 @@ export const projects = [
     name: "Instant Messaging",
     description: "Mimic of the Signal app.",
     features: [
+      "Google account sign in",
       "Profile creation & authenthication",
       "Group chat creations & messagings",
       "Web support",

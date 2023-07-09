@@ -47,73 +47,10 @@ Things to do:
 2. Portfolio (App, website): 
    > Light & dark mode - hooks, background image of sun & moon 
    > Button animations with logos 
-   > Layout (but horizontal): 
-      https://www.awwwards.com/inspiration/digital-design-studio-clean-graphic-design-and-identity-strategy 
-   > Future style: https://p5aholic.me/ 
-   > Contents: 
-      i. Name, looking for a React Native developer position 
-     ii. Projects: 
-         (a) Food delivery (Deliveroo - display content received from backend, screen transitions, Google Maps): 
-            - Sanity             : content management API 
-            - Tailwind CSS       : alternative styling 
-            - React Navigation   : multiple screen navigation 
-            - Redux              : global state management 
-            - Currency formatter : text currency formatter 
-            - Animatable         : transitions & animations 
-            - Progress           : progress/loading indicator 
-            - Maps               : view Google Maps 
-            - HeroIcons          : free SVG icons 
-         (b) Transportation (Uber - Google Map manipulation) 
-            - NativeWind                 : Tailwind CSS integrator 
-            - Redux                      : state management 
-            - Elements                   : library of free prebuilt styles 
-            - Navigation                 : multiple screen navigation 
-            - Maps                       : view Google Maps 
-            - Maps Directions            : draw routes on Google Maps 
-            - Google Places Autocomplete : text autocomplete for locations 
-         (c) Dating (Tinder - Google web browser authentication, custom hook for local state management, personal messaging, build and deployment) 
-            - NativeWind              : Tailwind CSS integrator 
-            - AuthSession             : web browser based authentication 
-            - Firebase Authentication : user authenticator 
-            - Firebase Firestore      : NoSQL database for profiles, matches, and chat messages 
-            - Deck Swiper             : swipeable cards 
-            - Navigation              : multiple screen navigation 
-            - EAS                     : build and deployment 
-         (d) Messaging (Signal - Firebase authentication, group messaging, cross platform): 
-            - Firebase Authentication : user authenticator 
-            - Firebase Firestore      : NoSQL database for profiles, group chats, and messages 
-            - Navigation              : multiple screen navigation 
-            - Elements                : library of free prebuilt styles 
-            - React Native Web        : web support 
-         (e) Tracker (crypto - tracking API): 
-            - Onboard : app launch onboarding 
-            - Reanimated : visualise data on graph 
-            - Bottom sheet : interactive bottom sheet display 
-            - Axios : HTTP client 
-            - Moment : display date & time 
-         (f) Authentication 
-         (g) List (ToDoList - local storage, state management) 
-         (h) Travel (TravelAppUI - styling) 
-         (i) Food Delivery 1 (FoodAppUI - styling, basic components) 
-         (j) Social platform (PhotoSharingAppUI - scrollview) 
-         (k) Onboarding (OnboardUI - onboarding customisations) 
-         (l) Virtual Reality Healthcare System for Patients with Trypanophobia - Final Year Project (Jul 2020 – Mar 2021): 
-               > Virtual reality game which combats needle fear among pediatric patients 
-                  - C#; Google VR SDK, Unity, Visual Studio. 
-         (m) Human Face Analysis System - Visual Image Processing (Aug 2021– Nov 2021): 
-               > Face analysis app that predicts age & gender using deep learning and calculates facial masculinity & symmetry. 
-                  - Python; OpenCV, CNN, Streamlit. 
-         (n) MagnifiCast - Game Production (Nov 2020 – Mar 2021): 
-               > Tower defense mobile game built from competitive analysis of mechanically similar games on the market. 
-                  - C#; Android, Unity, Visual Studio. 
-         (o) Violet World - Computer Graphic Fundamentals (Nov 2019 – Mar 2020): 
-               > Imaginative 3D world of outer space fully built with program codes. 
-                  - C++; Code::Blocks, OpenGL. 
-         (p) Employee Training Management System -  Software Engineering Fundamentals (Jul 2019 – Oct 2019): 
-               > User management system for supervising employee training registrations, applications, and approvals. 
-                  - C++, SQL; MySQL, Qt Creator. 
-    iii. Skills 
-     iv. Working Experiences 
-      v. Educations 
-     vi. Interests 
-    vii. Contact info 
+   > Design: https://p5aholic.me/ 
+   > Todo: 
+      i- project sampleImages 
+     ii- square previews in grid 
+    iii- enlarged sampleImages onPress 
+     iv- preview pictures of sampleImages 
+      v- project card layout 
