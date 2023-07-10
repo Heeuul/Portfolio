@@ -53,4 +53,7 @@ Things to do:
      ii- square previews in grid 
     iii- enlarged sampleImages onPress 
      iv- preview pictures of sampleImages 
-      v- project card layout 
+      v- project redirect to Github source codes 
+    vii- portrait mode project bottom sheet display 
+   viii- project card layout 
+     ix- site bug report 

@@ -149,7 +149,14 @@ export const projects = [
         uri: "https://necolas.github.io/react-native-web/",
       },
     ],
-    previewPicPaths: [],
+    previewPicPaths: [
+      require("../assets/projects/3_InstantMessaging/Screenshot_0_Signal.png"),
+      require("../assets/projects/3_InstantMessaging/Screenshot_1_Signal.png"),
+      require("../assets/projects/3_InstantMessaging/Screenshot_2_Signal.png"),
+      require("../assets/projects/3_InstantMessaging/Screenshot_3_Signal.png"),
+      require("../assets/projects/3_InstantMessaging/Screenshot_4_Signal.png"),
+      require("../assets/projects/3_InstantMessaging/Screenshot_5_Signal.png"),
+    ],
   },
   {
     id: 4,
