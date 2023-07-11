@@ -119,7 +119,16 @@ export const projects = [
         uri: "https://github.com/expo/eas-cli",
       },
     ],
-    previewPicPaths: [],
+    previewPicPaths: [
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_0_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_1_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_2_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_3_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_4_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_5_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_6_TinderClone.png"),
+      require("../assets/projects/2_OnlineDatingMatch/Screenshot_7_TinderClone.png"),
+    ],
   },
   {
     id: 3,
