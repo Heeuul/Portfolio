@@ -12,10 +12,12 @@ import {
 import React, { useEffect, useState } from "react";
 
 import useDarkMode from "../hooks/useDarkMode";
+import usePopup from "../hooks/usePopup";
 
 export default function ProjectCards({ projectData }) {
   const { width, height } = useWindowDimensions();
   const { invertColor, betweenColor } = useDarkMode();
+  const { ShowPopup, SetPopupContent } = usePopup();
 
   const [techs, SetTechs] = useState([]);
   const [imgs, SetImgs] = useState([]);
@@ -41,7 +43,22 @@ export default function ProjectCards({ projectData }) {
     let picLen = projectData.previewPicPaths.length;
     for (let i = 0; i < picLen; i++) {
       imgComps.push(
-        <TouchableOpacity style={{ flex: 1 }}>
+        <TouchableOpacity
+          style={{ flex: 1 }}
+          onPress={() => {
+            SetPopupContent(
+              <Image
+                source={projectData.previewPicPaths[i]}
+                style={{
+                  height: "90%",
+                  width: "90%",
+                  resizeMode: "contain",
+                }}
+              />
+            );
+            ShowPopup();
+          }}
+        >
           <Image
             source={projectData.previewPicPaths[i]}
             style={{

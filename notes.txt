@@ -49,7 +49,7 @@ Things to do:
    > Button animations with logos 
    > Design: https://p5aholic.me/ 
    > Todo: 
-      i- project sampleImages 
+      i- project sampleImages // DONE 
      ii- square previews in grid 
     iii- enlarged sampleImages onPress 
      iv- preview pictures of sampleImages 

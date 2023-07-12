@@ -37,6 +37,12 @@ export const projects = [
       require("../assets/projects/0_LocationComparison/Screenshot_2_LastMinute.png"),
       require("../assets/projects/0_LocationComparison/Screenshot_3_LastMinute.png"),
     ],
+    previewPicURIs: [
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/0_LocationComparison/Screenshot_0_LastMinute.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/0_LocationComparison/Screenshot_1_LastMinute.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/0_LocationComparison/Screenshot_2_LastMinute.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/0_LocationComparison/Screenshot_3_LastMinute.png",
+    ],
   },
   {
     id: 1,
@@ -86,6 +92,12 @@ export const projects = [
       require("../assets/projects/1_FoodDelivery/Screenshot_4_Deliveroo.png"),
       require("../assets/projects/1_FoodDelivery/Screenshot_5_Deliveroo.png"),
     ],
+    previewPicURIs: [
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/1_FoodDelivery/Screenshot_0_Deliveroo.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/1_FoodDelivery/Screenshot_1_Deliveroo.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/1_FoodDelivery/Screenshot_2_Deliveroo.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/1_FoodDelivery/Screenshot_3_Deliveroo.png",
+    ],
   },
   {
     id: 2,
@@ -129,6 +141,16 @@ export const projects = [
       require("../assets/projects/2_OnlineDatingMatch/Screenshot_6_TinderClone.png"),
       require("../assets/projects/2_OnlineDatingMatch/Screenshot_7_TinderClone.png"),
     ],
+    previewPicURIs: [
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_0_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_1_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_2_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_3_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_4_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_5_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_6_TinderClone.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/2_OnlineDatingMatch/Screenshot_7_TinderClone.png",
+    ],
   },
   {
     id: 3,
@@ -165,6 +187,14 @@ export const projects = [
       require("../assets/projects/3_InstantMessaging/Screenshot_3_Signal.png"),
       require("../assets/projects/3_InstantMessaging/Screenshot_4_Signal.png"),
       require("../assets/projects/3_InstantMessaging/Screenshot_5_Signal.png"),
+    ],
+    previewPicURIs: [
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_0_Signal.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_1_Signal.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_2_Signal.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_3_Signal.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_4_Signal.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/3_InstantMessaging/Screenshot_5_Signal.png",
     ],
   },
   {
@@ -208,6 +238,12 @@ export const projects = [
       require("../assets/projects/4_StatisticsTracker/Screenshot_1_CryptoPriceTracker.png"),
       require("../assets/projects/4_StatisticsTracker/Screenshot_2_CryptoPriceTracker.png"),
       require("../assets/projects/4_StatisticsTracker/Screenshot_3_CryptoPriceTracker.png"),
+    ],
+    previewPicURIs: [
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/4_StatisticsTracker/Screenshot_0_CryptoPriceTracker.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/4_StatisticsTracker/Screenshot_1_CryptoPriceTracker.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/4_StatisticsTracker/Screenshot_2_CryptoPriceTracker.png",
+      "https://raw.githubusercontent.com/Heeuul/Portfolio/main/assets/projects/4_StatisticsTracker/Screenshot_3_CryptoPriceTracker.png",
     ],
   },
 ];
