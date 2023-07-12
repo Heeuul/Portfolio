@@ -49,11 +49,8 @@ Things to do:
    > Button animations with logos 
    > Design: https://p5aholic.me/ 
    > Todo: 
-      i- project sampleImages // DONE 
-     ii- square previews in grid 
-    iii- enlarged sampleImages onPress 
-     iv- preview pictures of sampleImages 
-      v- project redirect to Github source codes 
-    vii- portrait mode project bottom sheet display 
-   viii- project card layout 
-     ix- site bug report 
+      i- square projectPreviews in grid, inline with rest of project info 
+     ii- preview pictures of sampleImages 
+    iii- project redirect to Github source codes 
+     iv- project card layout 
+      v- site bug report 
