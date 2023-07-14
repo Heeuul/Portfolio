@@ -40,7 +40,7 @@ export default function ProjectCards({ projectData }) {
     SetTechs(techComps);
 
     var imgComps = [];
-    let picLen = projectData.previewPicPaths.length;
+    let picLen = projectData.previewPics.length;
     for (let i = 0; i < picLen; i++) {
       imgComps.push(
         <TouchableOpacity
@@ -48,7 +48,7 @@ export default function ProjectCards({ projectData }) {
           onPress={() => {
             SetPopupContent(
               <Image
-                source={projectData.previewPicPaths[i]}
+                source={projectData.demoPics[i]}
                 style={{
                   height: "90%",
                   width: "90%",
@@ -60,7 +60,7 @@ export default function ProjectCards({ projectData }) {
           }}
         >
           <Image
-            source={projectData.previewPicPaths[i]}
+            source={projectData.previewPics[i]}
             style={{
               height: "100%",
               width: "100%",
