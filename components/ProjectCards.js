@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import { FontAwesome } from "@expo/vector-icons";
 
 import useDarkMode from "../hooks/useDarkMode";
 import usePopup from "../hooks/usePopup";
@@ -174,7 +175,30 @@ export default function ProjectCards({ projectData }) {
           }}
           scrollEnabled={false}
         />
+
+        <Text
+          style={[
+            styles.titleText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: betweenColor,
+            },
+          ]}
+        >
+          source code
+        </Text>
+        <TouchableOpacity
+          key={"githubLink" + projectData.id}
+          onPress={() => Linking.openURL(projectData.githubURI)}
+          style={{
+            alignSelf: width > height ? "flex-start" : "flex-end",
+            width: 50,
+          }}
+        >
+          <FontAwesome name="github-square" size={50} color={invertColor} />
+        </TouchableOpacity>
       </ScrollView>
+
       <View style={[styles.imgContainer, { borderColor: betweenColor }]}>
         {imgs}
       </View>

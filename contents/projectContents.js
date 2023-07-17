@@ -1,6 +1,7 @@
 export const projects = [
   {
     id: 0,
+    githubURI: "https://github.com/Heeuul/LastMinute",
     name: "Location Comparison",
     description:
       "Map app to compare travel times from a starting point to multiple destinations.",
@@ -58,6 +59,7 @@ export const projects = [
   },
   {
     id: 1,
+    githubURI: "https://github.com/Heeuul/deliveroo-clone",
     name: "Food Delivery",
     description: "Food ordering system that mimics the Deliveroo app.",
     features: [
@@ -129,6 +131,7 @@ export const projects = [
   },
   {
     id: 2,
+    githubURI: "https://github.com/Heeuul/tinder-clone",
     name: "Online Dating Match",
     description: "Mimic of the Tinder app.",
     features: [
@@ -192,6 +195,7 @@ export const projects = [
   },
   {
     id: 3,
+    githubURI: "https://github.com/Heeuul/signal-clone",
     name: "Instant Messaging",
     description: "Mimic of the Signal app.",
     features: [
@@ -245,6 +249,7 @@ export const projects = [
   },
   {
     id: 4,
+    githubURI: "https://github.com/Heeuul/CryptoPriceTracker/",
     name: "Statistics Tracker",
     description:
       "Cryptocurrency price tracker interface app for CoinGecko API.",

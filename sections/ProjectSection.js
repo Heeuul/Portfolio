@@ -24,11 +24,11 @@ export default function Project() {
         }}
         onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
       >
-        <ProjectCards projectData={projects[0]} />
-        <ProjectCards projectData={projects[1]} />
-        <ProjectCards projectData={projects[2]} />
-        <ProjectCards projectData={projects[3]} />
-        <ProjectCards projectData={projects[4]} />
+        <ProjectCards key={"LocationComparison"} projectData={projects[0]} />
+        <ProjectCards key={"FoodDelivery"} projectData={projects[1]} />
+        <ProjectCards key={"OnlineDatingMatch"} projectData={projects[2]} />
+        <ProjectCards key={"InstantMessaging"} projectData={projects[3]} />
+        <ProjectCards key={"StatisticsTracker"} projectData={projects[4]} />
       </Swiper>
       <View style={styles.navContainer} pointerEvents="box-none">
         <TouchableOpacity

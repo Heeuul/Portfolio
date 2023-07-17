@@ -48,9 +48,3 @@ Things to do:
    > Light & dark mode - hooks, background image of sun & moon 
    > Button animations with logos 
    > Design: https://p5aholic.me/ 
-   > Todo: 
-      i- square projectPreviews in grid, inline with rest of project info 
-     ii- preview pictures of sampleImages 
-    iii- project redirect to Github source codes 
-     iv- project card layout 
-      v- site bug report 
