@@ -21,7 +21,6 @@ export default function ProjectCards({ projectData }) {
   const { ShowPopup, SetPopupContent } = usePopup();
 
   const [techs, SetTechs] = useState([]);
-  const [imgs, SetImgs] = useState([]);
   useEffect(() => {
     var techComps = [];
     for (let i = 0; i < projectData.technologies.length; i++) {
@@ -39,39 +38,6 @@ export default function ProjectCards({ projectData }) {
       );
     }
     SetTechs(techComps);
-
-    var imgComps = [];
-    let picLen = projectData.previewPics.length;
-    for (let i = 0; i < picLen; i++) {
-      imgComps.push(
-        <TouchableOpacity
-          style={{ flex: 1 }}
-          onPress={() => {
-            SetPopupContent(
-              <Image
-                source={projectData.demoPics[i]}
-                style={{
-                  height: "90%",
-                  width: "90%",
-                  resizeMode: "contain",
-                }}
-              />
-            );
-            ShowPopup();
-          }}
-        >
-          <Image
-            source={projectData.previewPics[i]}
-            style={{
-              height: "100%",
-              width: "100%",
-              resizeMode: "contain",
-            }}
-          />
-        </TouchableOpacity>
-      );
-    }
-    SetImgs(imgComps);
   }, []);
 
   function RenderFeature(item, index) {
@@ -100,6 +66,27 @@ export default function ProjectCards({ projectData }) {
         )}
       </View>
     );
+  }
+
+  function RenderPreviewImage(item, index) {
+    return (
+      <TouchableOpacity
+        style={{
+          height: width / (projectData.previewPics.length + 1),
+          width: width / (projectData.previewPics.length + 1),
+          padding: 5,
+        }}
+        onPress={() => PopupImage(index)}
+      >
+        <Image source={item} style={styles.imageStyle} />
+      </TouchableOpacity>
+    );
+  }
+  function PopupImage(index) {
+    SetPopupContent(
+      <Image source={projectData.demoPics[index]} style={styles.imageStyle} />
+    );
+    ShowPopup();
   }
 
   return (
@@ -168,11 +155,45 @@ export default function ProjectCards({ projectData }) {
         </Text>
         <FlatList
           data={projectData.features}
-          key={({ index }) => "feature" + index}
+          keyExtractor={(index) => "feature_" + projectData.id + "_" + index}
           renderItem={({ item, index }) => RenderFeature(item, index)}
           contentContainerStyle={{
             alignItems: width > height ? "flex-start" : "flex-end",
           }}
+          scrollEnabled={false}
+        />
+
+        <Text
+          style={[
+            styles.titleText,
+            {
+              textAlign: width > height ? "left" : "right",
+              color: betweenColor,
+            },
+          ]}
+        >
+          previews
+        </Text>
+        <FlatList
+          data={projectData.previewPics}
+          keyExtractor={(index) => "demo_" + projectData.id + "_" + index}
+          renderItem={({ item, index }) =>
+            index < projectData.previewPics.length / 2 &&
+            RenderPreviewImage(item, index)
+          }
+          style={{ alignSelf: width > height ? "left" : "right" }}
+          horizontal={true}
+          scrollEnabled={false}
+        />
+        <FlatList
+          data={projectData.previewPics}
+          keyExtractor={(index) => "demo_" + projectData.id + "_" + index}
+          renderItem={({ item, index }) =>
+            index >= projectData.previewPics.length / 2 &&
+            RenderPreviewImage(item, index)
+          }
+          style={{ alignSelf: width > height ? "left" : "right" }}
+          horizontal={true}
           scrollEnabled={false}
         />
 
@@ -198,10 +219,6 @@ export default function ProjectCards({ projectData }) {
           <FontAwesome name="github-square" size={50} color={invertColor} />
         </TouchableOpacity>
       </ScrollView>
-
-      <View style={[styles.imgContainer, { borderColor: betweenColor }]}>
-        {imgs}
-      </View>
     </View>
   );
 }
@@ -243,13 +260,9 @@ const styles = StyleSheet.create({
     fontSize: 25,
     includeFontPadding: false,
   },
-  imgContainer: {
-    flex: 1,
-    maxHeight: "35%",
-    width: "95%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    borderTopWidth: 1,
-    paddingTop: 5,
+  imageStyle: {
+    height: "100%",
+    width: "100%",
+    resizeMode: "contain",
   },
 });

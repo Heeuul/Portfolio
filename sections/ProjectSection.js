@@ -18,10 +18,7 @@ export default function Project() {
       <Swiper
         ref={swiperRef}
         controlsEnabled={false}
-        innerContainerStyle={{
-          overflow: "visible",
-          borderRadius: 15,
-        }}
+        innerContainerStyle={styles.swiperContainer}
         onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
       >
         <ProjectCards key={"LocationComparison"} projectData={projects[0]} />
@@ -80,6 +77,10 @@ const styles = StyleSheet.create({
     width: "98%",
     height: "98%",
     alignSelf: "center",
+  },
+  swiperContainer: {
+    overflow: "visible",
+    borderRadius: 15,
   },
   navContainer: {
     width: "100%",
