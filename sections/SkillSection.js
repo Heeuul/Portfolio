@@ -29,9 +29,8 @@ export default function Skill() {
       renderSectionFooter={() => <View style={{ height: 50 }} />}
       style={[
         styles.container,
-        { maxHeight: height * (width > height ? 0.9 : 0.5) },
+        { maxHeight: height * (width > height ? 0.9 : 0.5), paddingRight: 10 },
       ]}
-      showsVerticalScrollIndicator={false}
     />
   );
 }

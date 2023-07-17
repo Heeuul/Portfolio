@@ -28,6 +28,9 @@ export default function Experience() {
         <Text style={[styles.roleText, { color: betweenColor }]}>
           {item.role}
         </Text>
+        <Text style={[styles.timeText, { color: invertColor }]}>
+          {item.startDate + "~" + item.endDate}
+        </Text>
 
         <FlatList
           data={item.tasks}
@@ -76,9 +79,11 @@ export default function Experience() {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => RenderExperience(item)}
       ItemSeparatorComponent={() => <View style={{ height: 50 }} />}
-      showsVerticalScrollIndicator={false}
       removeClippedSubviews={true}
-      style={{ maxHeight: height * (width > height ? 0.9 : 0.45) }}
+      style={{
+        maxHeight: height * (width > height ? 0.9 : 0.45),
+        paddingRight: 10,
+      }}
     />
   );
 }
@@ -86,23 +91,29 @@ export default function Experience() {
 const styles = StyleSheet.create({
   companyText: {
     fontFamily: "HelveticaNeue",
+    fontSize: 40,
+    includeFontPadding: false,
     textTransform: "uppercase",
     textAlign: "right",
-    textDecorationLine: "underline",
-    fontSize: 35,
     alignSelf: "flex-end",
   },
   roleText: {
     fontFamily: "HelveticaNeue",
+    fontSize: 20,
+    includeFontPadding: false,
     textTransform: "lowercase",
     textAlign: "right",
-    includeFontPadding: false,
-    marginBottom: 25,
+  },
+  timeText: {
+    fontFamily: "HelveticaNeue",
     fontSize: 20,
+    includeFontPadding: false,
+    textAlign: "right",
+    marginBottom: 25,
   },
   taskText: {
     fontFamily: "HelveticaNeue",
-    textAlign: "left",
     fontSize: 25,
+    textAlign: "left",
   },
 });

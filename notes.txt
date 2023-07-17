@@ -40,7 +40,6 @@ Things to do:
          - Bottom sheet : interactive bottom sheet display 
          - Axios : HTTP client 
          - Moment : display date & time 
-      (f) 
 
 -----------------------------------------------------------------
 
@@ -48,3 +47,11 @@ Things to do:
    > Light & dark mode - hooks, background image of sun & moon 
    > Button animations with logos 
    > Design: https://p5aholic.me/ 
+
+-----------------------------------------------------------------
+
+TODO: 
+1. Merge projectCard content 
+2. Apply companies atleast one a day 
+3. Add previous projects 
+4. Make 4Sides app 

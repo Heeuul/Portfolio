@@ -218,10 +218,11 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     width: "95%",
+    paddingRight: 10,
   },
   projTitleText: {
     fontFamily: "HelveticaNeue",
-    fontSize: 35,
+    fontSize: 40,
   },
   projDescText: {
     fontFamily: "HelveticaNeue",
