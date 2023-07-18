@@ -51,8 +51,6 @@ Things to do:
 -----------------------------------------------------------------
 
 TODO: 
-1. Merge projectCard content 
-2. Vertical swiper for Skill contents 
-2. Apply companies atleast one a day 
-3. Add previous projects 
-4. Make 4Sides app 
+1. Apply companies atleast one a day 
+2. Add previous unrelated projects 
+3. Make 4Sides app 
