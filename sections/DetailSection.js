@@ -76,7 +76,7 @@ export default function Detail() {
   function PageRender() {
     return (
       <View style={{ flex: 1 }}>
-        <Text style={styles.detailText}>
+        {/* <Text style={styles.detailText}>
           <Text style={[styles.labelText, { color: betweenColor }]}>
             {"design inspired by" + "\n"}
           </Text>
@@ -92,7 +92,7 @@ export default function Detail() {
               portfolio
             </Text>
           </Text>
-        </Text>
+        </Text> */}
 
         <Text style={styles.detailText}>
           <Text style={[styles.labelText, { color: betweenColor }]}>

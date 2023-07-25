@@ -24,6 +24,7 @@ export default function HomeScreen() {
           {
             flexDirection: width > height ? "row-reverse" : "column-reverse",
             backgroundColor: modeColor,
+            borderColor: betweenColor,
           },
         ]}
       >
@@ -39,12 +40,21 @@ export default function HomeScreen() {
         >
           {currentSectionData.component}
         </View>
-        <View style={styles.baseContainer}>
+        <View
+          style={[
+            styles.baseContainer,
+            {
+              backgroundColor: modeColor,
+              borderWidth: 3,
+              borderColor: betweenColor,
+            },
+          ]}
+        >
           <BaseHeader />
           <BaseFooter />
         </View>
       </View>
-      <Background />
+      {/* <Background /> */}
       <Popup />
     </View>
   );
@@ -65,6 +75,7 @@ const styles = StyleSheet.create({
     padding: 25,
     borderRadius: 25,
     overflow: "hidden",
+    borderWidth: 3,
   },
   contentContainer: {
     flex: 1,
@@ -72,5 +83,7 @@ const styles = StyleSheet.create({
   },
   baseContainer: {
     justifyContent: "space-between",
+    borderRadius: 25,
+    padding: 10,
   },
 });
