@@ -53,4 +53,3 @@ Things to do:
 TODO: 
 1. Apply companies atleast one a day 
 2. Add previous unrelated projects 
-3. Make 4Sides app 
