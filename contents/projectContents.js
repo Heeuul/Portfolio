@@ -249,7 +249,7 @@ export const projects = [
   },
   {
     id: 4,
-    githubURI: "https://github.com/Heeuul/CryptoPriceTracker/",
+    githubURI: "https://github.com/Heeuul/CryptoPriceTracker",
     name: "Statistics Tracker",
     description:
       "Cryptocurrency price tracker interface app for CoinGecko API.",
