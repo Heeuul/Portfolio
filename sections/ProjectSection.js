@@ -35,7 +35,7 @@ export default function Project() {
           }}
           disabled={currentID === 0}
           style={{
-            backgroundColor: currentID === 0 ? "transparent" : modeColor + "88",
+            backgroundColor: currentID === 0 ? "transparent" : modeColor + "e9",
             borderRadius: 50,
           }}
         >
@@ -55,7 +55,7 @@ export default function Project() {
             backgroundColor:
               currentID === projects.length - 1
                 ? "transparent"
-                : modeColor + "88",
+                : modeColor + "e9",
             borderRadius: 50,
           }}
         >

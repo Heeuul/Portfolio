@@ -41,20 +41,13 @@ export default function HomeScreen() {
           {currentSectionData.component}
         </View>
         <View
-          style={[
-            styles.baseContainer,
-            {
-              backgroundColor: modeColor,
-              borderWidth: 3,
-              borderColor: betweenColor,
-            },
-          ]}
+          style={[styles.baseContainer, { backgroundColor: modeColor + "e9" }]}
         >
           <BaseHeader />
           <BaseFooter />
         </View>
       </View>
-      {/* <Background /> */}
+      <Background />
       <Popup />
     </View>
   );
