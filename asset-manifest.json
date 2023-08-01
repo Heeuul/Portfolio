@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Portfolio/static/js/main.84eff7f7.js",
+    "main.js": "/Portfolio/static/js/main.fbe81950.js",
     "static/js/863.97cc013c.js": "/Portfolio/static/js/863.97cc013c.js",
     "static/media/Screenshot_1_TinderClone.png": "/Portfolio/static/media/Screenshot_1_TinderClone.d2e24bf745403b8304c5.png",
     "static/media/Screenshot_0_Deliveroo.png": "/Portfolio/static/media/Screenshot_0_Deliveroo.cfd99a44dbe8b8dedd1d.png",
@@ -69,11 +69,11 @@
     "favicon-16.png": "/Portfolio/favicon-16.png",
     "manifest.json": "/Portfolio/manifest.json",
     "serve.json": "/Portfolio/serve.json",
-    "main.84eff7f7.js.map": "/Portfolio/static/js/main.84eff7f7.js.map",
+    "main.fbe81950.js.map": "/Portfolio/static/js/main.fbe81950.js.map",
     "863.97cc013c.js.map": "/Portfolio/static/js/863.97cc013c.js.map"
   },
   "entrypoints": [
     "static/js/863.97cc013c.js",
-    "static/js/main.84eff7f7.js"
+    "static/js/main.fbe81950.js"
   ]
 }
