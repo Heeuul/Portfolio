@@ -4,7 +4,7 @@ import React from "react";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function BaseHeader() {
-  const { invertColor } = useDarkMode();
+  const { invertColor, betweenColor } = useDarkMode();
 
   return (
     <View>
@@ -12,13 +12,13 @@ export default function BaseHeader() {
       <View style={styles.titleButton}>
         <Image
           source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
+            uri: "https://static.thenounproject.com/png/390336-200.png",
           }}
-          style={styles.reactLogo}
+          style={[styles.icon, { backgroundColor: betweenColor }]}
         />
         <View>
-          <Text style={[styles.rnText, { color: invertColor }]}>
-            React Native
+          <Text style={[styles.techText, { color: invertColor }]}>
+            Full Stack
           </Text>
           <Text style={[styles.roleText, { color: invertColor }]}>
             Developer/Programmer
@@ -39,13 +39,14 @@ const styles = StyleSheet.create({
   titleButton: {
     flexDirection: "row",
   },
-  reactLogo: {
+  icon: {
     resizeMode: "contain",
     width: 55,
     height: 55,
+    borderRadius: 55,
     marginHorizontal: 5,
   },
-  rnText: {
+  techText: {
     fontFamily: "HelveticaNeue",
     fontSize: 30,
   },

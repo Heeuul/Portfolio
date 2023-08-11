@@ -4,11 +4,31 @@ export const skills = [
     data: ["JavaScript", "C#", "C++", "Java", "SQL", "Python", "HTML", "CSS"],
   },
   {
-    title: "Framework",
-    data: ["React Native", "Unity", "Bootstrap", "Github", "IBM DB2", "MySQL"],
+    title: "Frameworks",
+    data: ["Unity", "Bootstrap", "Github", "Docker"],
   },
   {
-    title: "Language",
+    title: "Frontend",
+    data: ["React JS", "React Native"],
+  },
+  {
+    title: "Backend",
+    data: ["Spring Boot", "MySQL"],
+  },
+  {
+    title: "Tools",
+    data: [
+      "Postman",
+      "Jupyter Notebook",
+      "BloodHound",
+      "Neo4j",
+      "RedisGraph",
+      "splunk",
+      "Cordex XDR",
+    ],
+  },
+  {
+    title: "Communication",
     data: ["English", "Malay"],
   },
 ];
