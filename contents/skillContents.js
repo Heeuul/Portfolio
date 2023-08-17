@@ -13,18 +13,24 @@ export const skills = [
   },
   {
     title: "Backend",
-    data: ["Spring Boot", "MySQL"],
+    data: ["Spring Boot", "MySQL", "SQLite", "IBM DB2"],
   },
   {
     title: "Tools",
     data: [
+      "VSCode",
+      "Visual Studio Community Edition",
       "Postman",
+      "Docker Desktop",
+      "VMWare",
+      "MySQL Workbench",
       "Jupyter Notebook",
       "BloodHound",
       "Neo4j",
       "RedisGraph",
       "splunk",
       "Cordex XDR",
+      "Eclipse",
     ],
   },
   {
