@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Portfolio/static/js/main.fbe81950.js",
-    "static/js/863.97cc013c.js": "/Portfolio/static/js/863.97cc013c.js",
+    "main.js": "/Portfolio/static/js/main.d87df338.js",
+    "static/js/863.a511d80f.js": "/Portfolio/static/js/863.a511d80f.js",
     "static/media/Screenshot_1_TinderClone.png": "/Portfolio/static/media/Screenshot_1_TinderClone.d2e24bf745403b8304c5.png",
     "static/media/Screenshot_0_Deliveroo.png": "/Portfolio/static/media/Screenshot_0_Deliveroo.cfd99a44dbe8b8dedd1d.png",
     "static/media/Screenshot_2_LastMinute.png": "/Portfolio/static/media/Screenshot_2_LastMinute.731f325b235ee02536e4.png",
@@ -29,10 +29,14 @@
     "static/media/Screenshot_2_CryptoPriceTracker.png": "/Portfolio/static/media/Screenshot_2_CryptoPriceTracker.c6d46b5a630919d74196.png",
     "static/media/Screenshot_0_Signal.png": "/Portfolio/static/media/Screenshot_0_Signal.75a4d6a34bc1c788de4c.png",
     "static/media/Screenshot_2_Signal.png": "/Portfolio/static/media/Screenshot_2_Signal.a50017e2ea45ea64b5e2.png",
+    "static/media/Screenshot_3_WebLib.jpeg": "/Portfolio/static/media/Screenshot_3_WebLib.772bc1bd48e58af70e2c.jpeg",
     "static/media/Screenshot_7_TinderClone.png": "/Portfolio/static/media/Screenshot_7_TinderClone.26f47688c054592cfedc.png",
+    "static/media/Screenshot_2_WebLib.jpeg": "/Portfolio/static/media/Screenshot_2_WebLib.d366339b3942193e87bd.jpeg",
     "static/media/Screenshot_1_Signal.png": "/Portfolio/static/media/Screenshot_1_Signal.4f7648dfce0d12512f45.png",
+    "static/media/Screenshot_1_WebLib.jpeg": "/Portfolio/static/media/Screenshot_1_WebLib.bc2db4525a1ef1e9344a.jpeg",
     "static/media/Screenshot_0_LastMinute.png": "/Portfolio/static/media/Screenshot_0_LastMinute.9653a1118db23a7c1d9d.png",
     "static/media/AntDesign.ttf": "/Portfolio/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
+    "static/media/Screenshot_0_WebLib.jpeg": "/Portfolio/static/media/Screenshot_0_WebLib.2b682630b87ed6391dac.jpeg",
     "static/media/preview_2_LastMinute.jpg": "/Portfolio/static/media/preview_2_LastMinute.321e21676fcbdee503b5.jpg",
     "static/media/preview_3_LastMinute.jpg": "/Portfolio/static/media/preview_3_LastMinute.e0f898b9a04aa5f671f2.jpg",
     "static/media/preview_0_Deliveroo.jpg": "/Portfolio/static/media/preview_0_Deliveroo.b44d323eda171941442d.jpg",
@@ -50,8 +54,12 @@
     "static/media/preview_5_Deliveroo.jpg": "/Portfolio/static/media/preview_5_Deliveroo.9371ec0490095a137bf2.jpg",
     "static/media/preview_5_Signal.jpg": "/Portfolio/static/media/preview_5_Signal.5ac9007eb0efdfb92c35.jpg",
     "static/media/preview_4_Signal.jpg": "/Portfolio/static/media/preview_4_Signal.5db0ac4b802611dd9746.jpg",
+    "static/media/preview_3_WebLib.jpeg": "/Portfolio/static/media/preview_3_WebLib.991cd7056ea70622fdd1.jpeg",
+    "static/media/preview_0_WebLib.jpeg": "/Portfolio/static/media/preview_0_WebLib.8c8a18b8ce32033d5d57.jpeg",
+    "static/media/preview_2_WebLib.jpeg": "/Portfolio/static/media/preview_2_WebLib.967f8681c76f7f89d240.jpeg",
     "static/media/preview_0_Signal.jpg": "/Portfolio/static/media/preview_0_Signal.45ba0313e5a53d69cadd.jpg",
     "static/media/preview_1_TinderClone.jpg": "/Portfolio/static/media/preview_1_TinderClone.200f44109b77f86e723c.jpg",
+    "static/media/preview_1_WebLib.jpeg": "/Portfolio/static/media/preview_1_WebLib.04d389e91ee2e889354b.jpeg",
     "static/media/preview_0_TinderClone.jpg": "/Portfolio/static/media/preview_0_TinderClone.3e8ec70d5376c0028627.jpg",
     "static/media/preview_4_Deliveroo.jpg": "/Portfolio/static/media/preview_4_Deliveroo.478471e4b6b769e80503.jpg",
     "static/media/preview_3_Deliveroo.jpg": "/Portfolio/static/media/preview_3_Deliveroo.f0ee1d8f99277991a4d2.jpg",
@@ -69,11 +77,11 @@
     "favicon-16.png": "/Portfolio/favicon-16.png",
     "manifest.json": "/Portfolio/manifest.json",
     "serve.json": "/Portfolio/serve.json",
-    "main.fbe81950.js.map": "/Portfolio/static/js/main.fbe81950.js.map",
-    "863.97cc013c.js.map": "/Portfolio/static/js/863.97cc013c.js.map"
+    "main.d87df338.js.map": "/Portfolio/static/js/main.d87df338.js.map",
+    "863.a511d80f.js.map": "/Portfolio/static/js/863.a511d80f.js.map"
   },
   "entrypoints": [
-    "static/js/863.97cc013c.js",
-    "static/js/main.fbe81950.js"
+    "static/js/863.a511d80f.js",
+    "static/js/main.d87df338.js"
   ]
 }
