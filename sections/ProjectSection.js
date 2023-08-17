@@ -3,8 +3,8 @@ import React, { useRef, useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import Swiper from "react-native-web-swiper";
 
-import ProjectCards from "../components/ProjectCards";
 import { projects } from "../contents/projectContents";
+import ProjectCards from "../components/ProjectCards";
 import useDarkMode from "../hooks/useDarkMode";
 
 export default function Project() {

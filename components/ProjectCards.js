@@ -20,6 +20,7 @@ export default function ProjectCards({ projectData }) {
   const { invertColor, betweenColor } = useDarkMode();
   const { ShowPopup, SetPopupContent } = usePopup();
 
+  // todo: useContext this
   const [techs, SetTechs] = useState([]);
   useEffect(() => {
     var techComps = [];
@@ -181,7 +182,7 @@ export default function ProjectCards({ projectData }) {
             index < projectData.previewPics.length / 2 &&
             RenderPreviewImage(item, index)
           }
-          style={{ alignSelf: width > height ? "left" : "right" }}
+          style={{ alignSelf: width > height ? "flex-start" : "flex-end" }}
           horizontal={true}
           scrollEnabled={false}
         />
@@ -192,7 +193,7 @@ export default function ProjectCards({ projectData }) {
             index >= projectData.previewPics.length / 2 &&
             RenderPreviewImage(item, index)
           }
-          style={{ alignSelf: width > height ? "left" : "right" }}
+          style={{ alignSelf: width > height ? "flex-start" : "flex-end" }}
           horizontal={true}
           scrollEnabled={false}
         />
