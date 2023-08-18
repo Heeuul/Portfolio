@@ -21,11 +21,16 @@ export default function Project() {
         innerContainerStyle={styles.swiperContainer}
         onIndexChanged={(newIndex) => SetCurrentID(newIndex)}
       >
-        <ProjectCards key={"LocationComparison"} projectData={projects[0]} />
-        <ProjectCards key={"FoodDelivery"} projectData={projects[1]} />
-        <ProjectCards key={"OnlineDatingMatch"} projectData={projects[2]} />
-        <ProjectCards key={"InstantMessaging"} projectData={projects[3]} />
-        <ProjectCards key={"StatisticsTracker"} projectData={projects[4]} />
+        <ProjectCards key={"BookLibrary"} projectData={projects[0]} />
+        <ProjectCards key={"LocationComparison"} projectData={projects[1]} />
+        <ProjectCards key={"FoodDelivery"} projectData={projects[2]} />
+        <ProjectCards key={"OnlineDatingMatch"} projectData={projects[3]} />
+        <ProjectCards key={"InstantMessaging"} projectData={projects[4]} />
+        <ProjectCards key={"StatisticsTracker"} projectData={projects[5]} />
+        <ProjectCards key={"WebBrowserGame"} projectData={projects[6]} />
+        <ProjectCards key={"TimeStepSimulation"} projectData={projects[7]} />
+        <ProjectCards key={"TileExploration"} projectData={projects[8]} />
+        <ProjectCards key={"SpecialisedCalculator"} projectData={projects[9]} />
       </Swiper>
       <View style={styles.navContainer} pointerEvents="box-none">
         <TouchableOpacity

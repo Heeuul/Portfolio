@@ -92,7 +92,7 @@ export default function ProjectCards({ projectData }) {
 
   return (
     <View
-      key={projectData.id}
+      key={"Proj_" + projectData.name}
       style={[styles.container, { borderColor: betweenColor }]}
     >
       <ScrollView style={styles.contentContainer}>
@@ -156,7 +156,7 @@ export default function ProjectCards({ projectData }) {
         </Text>
         <FlatList
           data={projectData.features}
-          keyExtractor={(index) => "feature_" + projectData.id + "_" + index}
+          keyExtractor={(index) => "feature_" + projectData.name + "_" + index}
           renderItem={({ item, index }) => RenderFeature(item, index)}
           contentContainerStyle={{
             alignItems: width > height ? "flex-start" : "flex-end",
@@ -177,7 +177,7 @@ export default function ProjectCards({ projectData }) {
         </Text>
         <FlatList
           data={projectData.previewPics}
-          keyExtractor={(index) => "demo_" + projectData.id + "_" + index}
+          keyExtractor={(index) => "demo_" + projectData.name + "_" + index}
           renderItem={({ item, index }) =>
             index < projectData.previewPics.length / 2 &&
             RenderPreviewImage(item, index)
@@ -188,7 +188,7 @@ export default function ProjectCards({ projectData }) {
         />
         <FlatList
           data={projectData.previewPics}
-          keyExtractor={(index) => "demo_" + projectData.id + "_" + index}
+          keyExtractor={(index) => "demo_" + projectData.name + "_" + index}
           renderItem={({ item, index }) =>
             index >= projectData.previewPics.length / 2 &&
             RenderPreviewImage(item, index)
@@ -210,7 +210,7 @@ export default function ProjectCards({ projectData }) {
           source code
         </Text>
         <TouchableOpacity
-          key={"githubLink" + projectData.id}
+          key={"githubLink_" + projectData.name}
           onPress={() => Linking.openURL(projectData.githubURI)}
           style={{
             alignSelf: width > height ? "flex-start" : "flex-end",
